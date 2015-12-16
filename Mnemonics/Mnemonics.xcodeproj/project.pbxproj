@@ -31,23 +31,23 @@
 
 /* Begin PBXFileReference section */
 		17C66DDF1C1B1EFE00625005 /* Mnemonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C66DE31C1B1EFE00625005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mnemonics/Assets/Info.plist; sourceTree = SOURCE_ROOT; };
-		17C66DE41C1B1EFE00625005 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Mnemonics/Assets/main.m; sourceTree = SOURCE_ROOT; };
-		17C66DE61C1B1EFE00625005 /* AIZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AIZAppDelegate.h; path = Mnemonics/Controllers/Base/AIZAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		17C66DE31C1B1EFE00625005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Assets/Info.plist; sourceTree = "<group>"; };
+		17C66DE41C1B1EFE00625005 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Assets/main.m; sourceTree = "<group>"; };
+		17C66DE61C1B1EFE00625005 /* AIZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AIZAppDelegate.h; path = Controllers/Base/AIZAppDelegate.h; sourceTree = "<group>"; };
 		17C66DE71C1B1EFE00625005 /* AIZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AIZAppDelegate.m; path = Controllers/Base/AIZAppDelegate.m; sourceTree = "<group>"; };
 		17C66DEA1C1B1EFE00625005 /* Mnemonics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mnemonics.xcdatamodel; sourceTree = "<group>"; };
-		17C66DF21C1B1EFE00625005 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Mnemonics/Assets/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		17C66DF21C1B1EFE00625005 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assets/Images.xcassets; sourceTree = "<group>"; };
 		17C66DFB1C1B1EFE00625005 /* MnemonicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MnemonicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C66E001C1B1EFE00625005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C66E011C1B1EFE00625005 /* MnemonicsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MnemonicsTests.m; sourceTree = "<group>"; };
-		17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberDetailsViewController.h; path = Mnemonics/Controllers/NumbersControllers/AIZNumberDetailsViewController.h; sourceTree = SOURCE_ROOT; };
-		17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberDetailsViewController.m; path = Mnemonics/Controllers/NumbersControllers/AIZNumberDetailsViewController.m; sourceTree = SOURCE_ROOT; };
-		17C66E0E1C1B2DB500625005 /* AIZCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZCustomTableViewCell.h; path = Mnemonics/Views/NumbersViews/AIZCustomTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		17C66E0F1C1B2DB500625005 /* AIZCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZCustomTableViewCell.m; path = Mnemonics/Views/NumbersViews/AIZCustomTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersMasterViewController.h; path = Mnemonics/Controllers/NumbersControllers/AIZNumbersMasterViewController.h; sourceTree = SOURCE_ROOT; };
-		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersMasterViewController.m; path = Mnemonics/Controllers/NumbersControllers/AIZNumbersMasterViewController.m; sourceTree = SOURCE_ROOT; };
-		17C66E171C1B617A00625005 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Mnemonics/Models/Number.h; sourceTree = SOURCE_ROOT; };
-		17C66E181C1B617A00625005 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Number.m; path = Mnemonics/Models/Number.m; sourceTree = SOURCE_ROOT; };
+		17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberDetailsViewController.h; path = Controllers/NumbersControllers/AIZNumberDetailsViewController.h; sourceTree = "<group>"; };
+		17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberDetailsViewController.m; path = Controllers/NumbersControllers/AIZNumberDetailsViewController.m; sourceTree = "<group>"; };
+		17C66E0E1C1B2DB500625005 /* AIZCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZCustomTableViewCell.h; path = Views/NumbersViews/AIZCustomTableViewCell.h; sourceTree = "<group>"; };
+		17C66E0F1C1B2DB500625005 /* AIZCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZCustomTableViewCell.m; path = Views/NumbersViews/AIZCustomTableViewCell.m; sourceTree = "<group>"; };
+		17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersMasterViewController.h; path = Controllers/NumbersControllers/AIZNumbersMasterViewController.h; sourceTree = "<group>"; };
+		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/AIZNumbersMasterViewController.m; sourceTree = "<group>"; };
+		17C66E171C1B617A00625005 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; };
+		17C66E181C1B617A00625005 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Number.m; path = Models/Number.m; sourceTree = "<group>"; };
 		17E98F631C20AB5D00A4E1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Mnemonics/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

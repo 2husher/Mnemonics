@@ -16,7 +16,7 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
 @interface AIZNumbersMasterViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *computers;
+@property (nonatomic, strong) NSArray *numbers;
 
 @end
 
@@ -31,6 +31,7 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
     if (self)
     {
         self.title = NSLocalizedString(@"Master", @"Master");
+
     }
     return self;
 }
@@ -38,6 +39,8 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self initNumbers];
 
     [self addMyTableView];
 
@@ -57,9 +60,9 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
 
     [self.view addSubview:self.tableView];
 
-    UIEdgeInsets contentInset = self.tableView.contentInset;
-    contentInset.top = 20;
-    [self.tableView setContentInset:contentInset];
+//    UIEdgeInsets contentInset = self.tableView.contentInset;
+//    contentInset.top = 20;
+//    [self.tableView setContentInset:contentInset];
 }
 
 - (void) addNavItems
@@ -101,6 +104,52 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
     }
 }
 
+- (void)initNumbers
+{
+    NSManagedObjectContext *context =
+        [self.fetchedResultsController managedObjectContext];
+
+    NSEntityDescription *entity =
+        [[self.fetchedResultsController fetchRequest] entity];
+
+
+
+//    NSFetchRequest *fetchRequest =
+//        [[NSFetchRequest alloc] initWithEntityName:@"Number"];
+
+//    self.numbers = [context executeFetchRequest:fetchRequest
+//                                          error:nil];
+
+    self.numbers = [self.fetchedResultsController fetchedObjects];
+    if ([self.numbers count] == 0)
+    {
+        NSLog(@"Set 100 of numbers");
+        for (NSInteger num = 0; num < 100; num++)
+        {
+//            NSManagedObject *newNumber =
+//            [NSEntityDescription insertNewObjectForEntityForName:@"Number"
+//                                          inManagedObjectContext:context];
+
+            NSManagedObject *newManagedObject =
+            [NSEntityDescription insertNewObjectForEntityForName:[entity name]
+                                          inManagedObjectContext:context];
+            
+            [newManagedObject setValue:[NSNumber numberWithInteger:num]
+                                forKey:@"value"];
+
+//            [newNumber setValue:[NSNumber numberWithInteger:num]
+//                         forKey:@"value"];
+
+            NSError *error = nil;
+            if (![context save:&error])
+            {
+                NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+            }
+        }
+        self.fetchedResultsController = nil;
+    }
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -112,8 +161,8 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
  numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo =
-        [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+        self.fetchedResultsController.sections[section];
+    return sectionInfo.numberOfObjects;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -179,12 +228,12 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
         return _fetchedResultsController;
     }
 
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Number"];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity =
-        [NSEntityDescription entityForName:@"Number"
-                    inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
+//    NSEntityDescription *entity =
+//        [NSEntityDescription entityForName:@"Number"
+//                    inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:entity];
 
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
@@ -204,7 +253,7 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
          initWithFetchRequest:fetchRequest
          managedObjectContext:self.managedObjectContext
          sectionNameKeyPath:nil
-         cacheName:@"Master"];
+         cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
 
@@ -220,66 +269,68 @@ static NSString *TableViewCellIdentifier = @"SimpleTableIdentifier";
     return _fetchedResultsController;
 }
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView beginUpdates];
-}
+//- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+//{
+//    [self.tableView beginUpdates];
+//}
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
-                          withRowAnimation:UITableViewRowAnimationFade];
-            break;
+//- (void)controller:(NSFetchedResultsController *)controller
+//  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+//           atIndex:(NSUInteger)sectionIndex
+//     forChangeType:(NSFetchedResultsChangeType)type
+//{
+//    switch(type)
+//    {
+//        case NSFetchedResultsChangeInsert:
+//            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+//                          withRowAnimation:UITableViewRowAnimationFade];
+//            break;
+//
+//        case NSFetchedResultsChangeDelete:
+//            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+//                          withRowAnimation:UITableViewRowAnimationFade];
+//            break;
+//    }
+//}
 
-        case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
-                          withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
-}
-
-- (void)controller:(NSFetchedResultsController *)controller
-   didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath
-     forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath
-{
-    UITableView *tableView = self.tableView;
-
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            break;
-
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:@[indexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            break;
-
-        case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
-                    atIndexPath:indexPath];
-            break;
-
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView endUpdates];
-}
+//- (void)controller:(NSFetchedResultsController *)controller
+//   didChangeObject:(id)anObject
+//       atIndexPath:(NSIndexPath *)indexPath
+//     forChangeType:(NSFetchedResultsChangeType)type
+//      newIndexPath:(NSIndexPath *)newIndexPath
+//{
+//    UITableView *tableView = self.tableView;
+//
+//    switch(type)
+//    {
+//        case NSFetchedResultsChangeInsert:
+//            [tableView insertRowsAtIndexPaths:@[newIndexPath]
+//                             withRowAnimation:UITableViewRowAnimationFade];
+//            break;
+//
+//        case NSFetchedResultsChangeDelete:
+//            [tableView deleteRowsAtIndexPaths:@[indexPath]
+//                             withRowAnimation:UITableViewRowAnimationFade];
+//            break;
+//
+//        case NSFetchedResultsChangeUpdate:
+//            [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+//                    atIndexPath:indexPath];
+//            break;
+//
+//        case NSFetchedResultsChangeMove:
+//            [tableView deleteRowsAtIndexPaths:@[indexPath]
+//                             withRowAnimation:UITableViewRowAnimationFade];
+//            [tableView insertRowsAtIndexPaths:@[newIndexPath]
+//                             withRowAnimation:UITableViewRowAnimationFade];
+//            break;
+//    }
+//}
+//
+//- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+//{
+//    [self.tableView endUpdates];
+//}
 
 /*
  // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
