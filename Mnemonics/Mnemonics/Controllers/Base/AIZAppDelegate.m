@@ -8,6 +8,7 @@
 
 #import "AIZAppDelegate.h"
 #import "AIZNumbersMasterViewController.h"
+#import "AIZInfoViewController.h"
 
 @interface AIZAppDelegate ()
 
@@ -26,13 +27,20 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     AIZNumbersMasterViewController *numbersMasterVC =
         [[AIZNumbersMasterViewController alloc] initWithNibName:nil
                                                          bundle:nil];
-
     UINavigationController *numbersNavC =
         [[UINavigationController alloc]
          initWithRootViewController:numbersMasterVC];
     numbersMasterVC.managedObjectContext = self.managedObjectContext;
 
-    self.tabBarController.viewControllers = @[numbersNavC];
+    AIZInfoViewController *infoVC =
+        [[AIZInfoViewController alloc] initWithNibName:nil
+                                                bundle:nil];
+    UINavigationController *infoNavC =
+        [[UINavigationController alloc]
+         initWithRootViewController:infoVC];
+
+    self.tabBarController.viewControllers = @[numbersNavC,
+                                              infoNavC];
     self.window.rootViewController = self.tabBarController;
 
     self.window.backgroundColor = [UIColor whiteColor];
