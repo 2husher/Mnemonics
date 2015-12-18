@@ -175,8 +175,8 @@
 			children = (
 				17E98F651C20AC7F00A4E1AA /* Base */,
 				17E98F5E1C20A77400A4E1AA /* NumbersControllers */,
-				17AA36671C22B8E500004A65 /* InfoControllers */,
 				17E466F71C24A924006412AC /* ConvertorsControllers */,
+				17AA36671C22B8E500004A65 /* InfoControllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

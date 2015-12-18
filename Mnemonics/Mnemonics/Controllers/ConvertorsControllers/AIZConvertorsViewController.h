@@ -11,5 +11,11 @@
 @interface AIZConvertorsViewController : UIViewController
 
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) UILabel *inputLabel;
+@property (nonatomic, strong) UITextField *inputTextField;
+@property (nonatomic, strong) UILabel *outputLabel;
+@property (nonatomic, strong) UITextField *outputTextField;
+
+@property (nonatomic, strong) NSMutableArray *numbersLabelsArray;
 
 @end
