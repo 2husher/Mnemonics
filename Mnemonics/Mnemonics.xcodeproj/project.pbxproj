@@ -17,6 +17,7 @@
 		17C66E101C1B2DB500625005 /* AIZCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66E0F1C1B2DB500625005 /* AIZCustomTableViewCell.m */; };
 		17C66E131C1B319800625005 /* AIZNumbersMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */; };
 		17C66E191C1B617A00625005 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66E181C1B617A00625005 /* Number.m */; };
+		17E466FA1C24A957006412AC /* AIZConvertorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E466F91C24A957006412AC /* AIZConvertorsViewController.m */; };
 		17E98F641C20AB5D00A4E1AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E98F621C20AB5D00A4E1AA /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/AIZNumbersMasterViewController.m; sourceTree = "<group>"; };
 		17C66E171C1B617A00625005 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; };
 		17C66E181C1B617A00625005 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Number.m; path = Models/Number.m; sourceTree = "<group>"; };
+		17E466F81C24A957006412AC /* AIZConvertorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZConvertorsViewController.h; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.h; sourceTree = "<group>"; };
+		17E466F91C24A957006412AC /* AIZConvertorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZConvertorsViewController.m; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.m; sourceTree = "<group>"; };
 		17E98F631C20AB5D00A4E1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Mnemonics/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +132,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		17E466F71C24A924006412AC /* ConvertorsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				17E466F81C24A957006412AC /* AIZConvertorsViewController.h */,
+				17E466F91C24A957006412AC /* AIZConvertorsViewController.m */,
+			);
+			name = ConvertorsControllers;
+			sourceTree = "<group>";
+		};
 		17E98F5E1C20A77400A4E1AA /* NumbersControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 				17E98F651C20AC7F00A4E1AA /* Base */,
 				17E98F5E1C20A77400A4E1AA /* NumbersControllers */,
 				17AA36671C22B8E500004A65 /* InfoControllers */,
+				17E466F71C24A924006412AC /* ConvertorsControllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E466FA1C24A957006412AC /* AIZConvertorsViewController.m in Sources */,
 				17C66E0D1C1B2AFA00625005 /* AIZNumberDetailsViewController.m in Sources */,
 				17AA366A1C22B91B00004A65 /* AIZInfoViewController.m in Sources */,
 				17C66DE81C1B1EFE00625005 /* AIZAppDelegate.m in Sources */,
