@@ -11,5 +11,6 @@
 @interface AIZInfoViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray *numbersLabelsArray;
+@property (nonatomic, strong) UITextView *rulesTextView;
 
 @end

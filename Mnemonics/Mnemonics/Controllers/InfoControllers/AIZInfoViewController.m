@@ -33,6 +33,9 @@
 
     [self addDigitLettersLabels];
     [self addDigitLettersLabelsConstraints];
+
+    [self addRulesTextView];
+    [self addRulesTextViewConstraints];
 }
 
 - (void)addDigitLettersLabels
@@ -163,6 +166,38 @@
         [self.view addConstraints:@[verticalNumLabelConstraints,
                                     verticalSecLetLabelConstraints]];
     }
+}
+
+- (void) addRulesTextView
+{
+    self.rulesTextView = [[UITextView alloc] initWithFrame:CGRectZero];
+    self.rulesTextView.editable = NO;
+    self.rulesTextView.text = @"Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица. Это мнемоническая таблица.";
+
+    [self.view addSubview:self.rulesTextView];
+}
+
+- (void) addRulesTextViewConstraints
+{
+    self.rulesTextView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    NSDictionary *nameMap = @{ @"table" : self.numbersLabelsArray[9][@"firstLetter"],
+                               @"textView" : self.rulesTextView,
+                               @"bottomGuide" :self.bottomLayoutGuide };
+
+    NSArray *verticalConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat: @"V:[table]-20-[textView]-20-[bottomGuide]"
+                                            options: 0
+                                            metrics: nil
+                                              views: nameMap];
+    [self.view addConstraints:verticalConstraints];
+
+    NSArray *horizontalConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat: @"H:|-[textView]-|"
+                                            options: 0
+                                            metrics: nil
+                                              views: nameMap];
+    [self.view addConstraints:horizontalConstraints];
 }
 
 @end
