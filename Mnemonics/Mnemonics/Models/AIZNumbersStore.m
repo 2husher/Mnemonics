@@ -40,19 +40,48 @@
     self = [super init];
     if (self)
     {
-        self.privateNumbers = @[@[@"H", @"М"],
-                                @[@"Г", @"Ж"],
-                                @[@"Д", @"Т"],
-                                @[@"К", @"Х"],
-                                @[@"Ч", @"Щ"],
-                                @[@"П", @"Б"],
-                                @[@"Ш", @"Л"],
-                                @[@"С", @"З"],
-                                @[@"В", @"Ф"],
-                                @[@"Р", @"Ц"]
-                                ];
+        self.privateNumbers =
+        @[@[@"Н", @"Г", @"Д", @"К", @"Ч", @"П", @"Ш", @"С", @"В", @"Р"],
+          @[@"М", @"Ж", @"Т", @"Х", @"Щ", @"Б", @"Л", @"З", @"Ф", @"Ц"]];
     }
     return self;
+}
+
+- (NSArray *)getLettersForDigits:(NSString *)digitsStr
+{
+
+    return @[];
+}
+
+- (NSArray *)getDigitsForLetters:(NSString *)lettersStr
+{
+    NSUInteger len = lettersStr.length;
+    NSMutableArray *output = [[NSMutableArray alloc] init];
+    for (NSUInteger i = 0; i < len; i++)
+    {
+        NSString *ch = [[lettersStr substringWithRange:NSMakeRange(i, 1)]
+                        uppercaseString];
+        NSUInteger index = [self.privateNumbers[0] indexOfObject:ch];
+        if (index == NSNotFound)
+        {
+            index = [self.privateNumbers[1] indexOfObject:ch];
+            if (index == NSNotFound)
+            {
+                continue;
+            }
+            else
+            {
+                [output addObject:[NSString
+                                   stringWithFormat:@"%lu", index]];
+            }
+        }
+        else
+        {
+            [output addObject:[NSString
+                               stringWithFormat:@"%lu", index]];
+        }
+    }
+    return output;
 }
 
 @end

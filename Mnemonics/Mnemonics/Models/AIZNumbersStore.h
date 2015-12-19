@@ -12,4 +12,6 @@
 
 + (instancetype)sharedStore;
 
+- (NSArray *)getDigitsForLetters:(NSString *)lettersStr;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AIZConvertorsViewController.h"
+#import "AIZNumbersStore.h"
 
 @interface AIZConvertorsViewController () <UITextFieldDelegate>
 
@@ -169,31 +170,9 @@
 
 -(void)convert2Number:(NSString *)text
 {
-    NSUInteger len = text.length;
-    NSMutableString *output = [[NSMutableString alloc] init];
-    for (NSUInteger i = 0; i < len; i++)
-    {
-        NSString *ch = [[text substringWithRange:NSMakeRange(i, 1)]
-                        uppercaseString];
-        NSUInteger index = [self.firstLetters indexOfObject:ch];
-        if (index == NSNotFound)
-        {
-            index = [self.secondLetters indexOfObject:ch];
-            if (index == NSNotFound)
-            {
-                continue;
-            }
-            else
-            {
-                [output appendFormat:@"%lu", index];
-            }
-        }
-        else
-        {
-            [output appendFormat:@"%lu", index];
-        }
-    }
-    self.outputTextField.text = output;
+    NSArray *letters = [[AIZNumbersStore sharedStore]
+                        getDigitsForLetters:text];
+    self.outputTextField.text = [letters componentsJoinedByString:@""];
 }
 
 -(void)convert2Word:(NSString *)text
