@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1788A67E1C26163600B131CF /* AIZNumbersStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1788A67D1C26163600B131CF /* AIZNumbersStore.m */; };
 		17AA366A1C22B91B00004A65 /* AIZInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AA36691C22B91B00004A65 /* AIZInfoViewController.m */; };
 		17C66DE51C1B1EFE00625005 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66DE41C1B1EFE00625005 /* main.m */; };
 		17C66DE81C1B1EFE00625005 /* AIZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66DE71C1B1EFE00625005 /* AIZAppDelegate.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1788A67C1C26163600B131CF /* AIZNumbersStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersStore.h; path = Models/AIZNumbersStore.h; sourceTree = "<group>"; };
+		1788A67D1C26163600B131CF /* AIZNumbersStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersStore.m; path = Models/AIZNumbersStore.m; sourceTree = "<group>"; };
 		17AA36681C22B91B00004A65 /* AIZInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZInfoViewController.h; path = Controllers/InfoControllers/AIZInfoViewController.h; sourceTree = "<group>"; };
 		17AA36691C22B91B00004A65 /* AIZInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZInfoViewController.m; path = Controllers/InfoControllers/AIZInfoViewController.m; sourceTree = "<group>"; };
 		17C66DDF1C1B1EFE00625005 /* Mnemonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +207,8 @@
 			children = (
 				17C66E171C1B617A00625005 /* Number.h */,
 				17C66E181C1B617A00625005 /* Number.m */,
+				1788A67C1C26163600B131CF /* AIZNumbersStore.h */,
+				1788A67D1C26163600B131CF /* AIZNumbersStore.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				17C66E191C1B617A00625005 /* Number.m in Sources */,
 				17C66DEB1C1B1EFE00625005 /* Mnemonics.xcdatamodeld in Sources */,
 				17C66E101C1B2DB500625005 /* AIZCustomTableViewCell.m in Sources */,
+				1788A67E1C26163600B131CF /* AIZNumbersStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
