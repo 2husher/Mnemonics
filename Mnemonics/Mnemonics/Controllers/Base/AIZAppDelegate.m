@@ -13,6 +13,10 @@
 
 @interface AIZAppDelegate ()
 
+@property (nonatomic, strong) UINavigationController *numbersNavC;
+@property (nonatomic, strong) UINavigationController *convertorsNavC;
+@property (nonatomic, strong) UINavigationController *infoNavC;
+
 @end
 
 @implementation AIZAppDelegate
@@ -25,36 +29,47 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
     self.tabBarController = [[UITabBarController alloc] init];
 
-    AIZNumbersMasterViewController *numbersMasterVC =
-        [[AIZNumbersMasterViewController alloc] initWithNibName:nil
-                                                         bundle:nil];
-    UINavigationController *numbersNavC =
-        [[UINavigationController alloc]
-         initWithRootViewController:numbersMasterVC];
-    numbersMasterVC.managedObjectContext = self.managedObjectContext;
+    [self addNumbersTab];
+    [self addConvertorsTab];
+    [self addInfoTab];
 
-    AIZConvertorsViewController *convertorsVC =
-    [[AIZConvertorsViewController alloc] initWithNibName:nil
-                                                  bundle:nil];
-    UINavigationController *convertorsNavC =
-    [[UINavigationController alloc]
-     initWithRootViewController:convertorsVC];
-
-    AIZInfoViewController *infoVC =
-        [[AIZInfoViewController alloc] initWithNibName:nil
-                                                bundle:nil];
-    UINavigationController *infoNavC =
-        [[UINavigationController alloc]
-         initWithRootViewController:infoVC];
-
-    self.tabBarController.viewControllers = @[numbersNavC,
-                                              convertorsNavC,
-                                              infoNavC,];
+    self.tabBarController.viewControllers = @[self.numbersNavC,
+                                              self.convertorsNavC,
+                                              self.infoNavC];
     self.window.rootViewController = self.tabBarController;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)addNumbersTab
+{
+    AIZNumbersMasterViewController *numbersMasterVC =
+        [[AIZNumbersMasterViewController alloc] initWithNibName:nil
+                                                         bundle:nil];
+    self.numbersNavC = [[UINavigationController alloc]
+                        initWithRootViewController:numbersMasterVC];
+
+    numbersMasterVC.managedObjectContext = self.managedObjectContext;
+}
+
+- (void)addConvertorsTab
+{
+    AIZConvertorsViewController *convertorsVC =
+        [[AIZConvertorsViewController alloc] initWithNibName:nil
+                                                      bundle:nil];
+    self.convertorsNavC = [[UINavigationController alloc]
+                           initWithRootViewController:convertorsVC];
+}
+
+- (void)addInfoTab
+{
+    AIZInfoViewController *infoVC =
+        [[AIZInfoViewController alloc] initWithNibName:nil
+                                                bundle:nil];
+    self.infoNavC = [[UINavigationController alloc]
+                     initWithRootViewController:infoVC];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
