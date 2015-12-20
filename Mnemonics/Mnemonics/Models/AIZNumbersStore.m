@@ -49,8 +49,44 @@
 
 - (NSArray *)getLettersForDigits:(NSString *)digitsStr
 {
-
-    return @[];
+    NSMutableArray *letters = [[NSMutableArray alloc] init];
+    NSArray *firstLetters  = self.privateNumbers[0];
+    NSArray *secondLetters = self.privateNumbers[1];
+    if (digitsStr.length == 1 || digitsStr.length == 2)
+    {
+        NSInteger number = [digitsStr integerValue];
+        if (number < 10)
+        {
+            NSArray *lettersPair = @[firstLetters[number],
+                                     secondLetters[number]];
+            [letters addObject:lettersPair];
+        }
+        else if (number > 9 && number < 100)
+        {
+            NSInteger firstDigit  = number / 10;
+            NSInteger secondDigit = number % 10;
+            NSArray *firstPair = @[firstLetters[firstDigit],
+                                   secondLetters[firstDigit]];
+            NSArray *secondPair = @[firstLetters[secondDigit],
+                                   secondLetters[secondDigit]];
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    NSArray *lettersPair = @[firstPair[i],
+                                             secondPair[j]];
+                    [letters addObject:lettersPair];
+                }
+            }
+        }
+    }
+    else
+    {
+        @throw [NSException exceptionWithName:@"Letters for digits"
+                                       reason:@"Digits length must be one or two"
+                                     userInfo:nil];
+    }
+    return letters;
 }
 
 - (NSArray *)getDigitsForLetters:(NSString *)lettersStr
