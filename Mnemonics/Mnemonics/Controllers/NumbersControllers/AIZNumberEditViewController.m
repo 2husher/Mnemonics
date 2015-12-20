@@ -44,6 +44,15 @@
     self.navigationItem.rightBarButtonItem = saveBtn;
 }
 
+- (void)cancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)save
+{
+}
+
 - (void)addNumberLabel
 {
     self.numberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -70,6 +79,10 @@
                     forControlEvents:UIControlEventValueChanged];
     //self.segmentedControl.selectedSegmentIndex = 0;
     [self.view addSubview:self.lettersSegmentedControl];
+}
+
+- (void)toggleControls:(UISegmentedControl *)sender
+{
 }
 
 - (void)addNumberLabelConstraints

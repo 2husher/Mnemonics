@@ -11,6 +11,8 @@
 		178B09701C26DDC20037A9F0 /* AIZNumberEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */; };
 		178B09731C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B09721C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m */; };
 		178B09761C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B09751C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.m */; };
+		178B09791C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B09781C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m */; };
+		178B097C1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B097B1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m */; };
 		17AA366A1C22B91B00004A65 /* AIZInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AA36691C22B91B00004A65 /* AIZInfoViewController.m */; };
 		17C66DE51C1B1EFE00625005 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66DE41C1B1EFE00625005 /* main.m */; };
 		17C66DE81C1B1EFE00625005 /* AIZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66DE71C1B1EFE00625005 /* AIZAppDelegate.m */; };
@@ -44,6 +46,10 @@
 		178B09721C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZInfoViewController+UIControls.m"; path = "Controllers/InfoControllers/AIZInfoViewController+UIControls.m"; sourceTree = "<group>"; };
 		178B09741C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZInfoViewController+UIConstraints.h"; path = "Controllers/InfoControllers/AIZInfoViewController+UIConstraints.h"; sourceTree = "<group>"; };
 		178B09751C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZInfoViewController+UIConstraints.m"; path = "Controllers/InfoControllers/AIZInfoViewController+UIConstraints.m"; sourceTree = "<group>"; };
+		178B09771C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZConvertorsViewController+UIControls.h"; path = "Controllers/ConvertorsControllers/AIZConvertorsViewController+UIControls.h"; sourceTree = "<group>"; };
+		178B09781C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZConvertorsViewController+UIControls.m"; path = "Controllers/ConvertorsControllers/AIZConvertorsViewController+UIControls.m"; sourceTree = "<group>"; };
+		178B097A1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AIZConvertorsViewController+UIConstraints.h"; sourceTree = "<group>"; };
+		178B097B1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AIZConvertorsViewController+UIConstraints.m"; sourceTree = "<group>"; };
 		17AA36681C22B91B00004A65 /* AIZInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZInfoViewController.h; path = Controllers/InfoControllers/AIZInfoViewController.h; sourceTree = "<group>"; };
 		17AA36691C22B91B00004A65 /* AIZInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZInfoViewController.m; path = Controllers/InfoControllers/AIZInfoViewController.m; sourceTree = "<group>"; };
 		17C66DDF1C1B1EFE00625005 /* Mnemonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +159,10 @@
 			children = (
 				17E466F81C24A957006412AC /* AIZConvertorsViewController.h */,
 				17E466F91C24A957006412AC /* AIZConvertorsViewController.m */,
+				178B09771C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.h */,
+				178B09781C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m */,
+				178B097A1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.h */,
+				178B097B1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m */,
 			);
 			name = ConvertorsControllers;
 			sourceTree = "<group>";
@@ -329,7 +339,9 @@
 			files = (
 				17E466FA1C24A957006412AC /* AIZConvertorsViewController.m in Sources */,
 				17C66E0D1C1B2AFA00625005 /* AIZNumberDetailsViewController.m in Sources */,
+				178B09791C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m in Sources */,
 				178B09731C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m in Sources */,
+				178B097C1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m in Sources */,
 				17AA366A1C22B91B00004A65 /* AIZInfoViewController.m in Sources */,
 				17C66DE81C1B1EFE00625005 /* AIZAppDelegate.m in Sources */,
 				17C66E131C1B319800625005 /* AIZNumbersMasterViewController.m in Sources */,

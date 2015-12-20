@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AIZConvertorsViewController : UIViewController
+@interface AIZConvertorsViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UILabel *inputLabel;
@@ -17,5 +17,7 @@
 @property (nonatomic, strong) UITextField *outputTextField;
 
 @property (nonatomic, strong) NSMutableArray *numbersLabelsArray;
+
+- (void)toggleControls:(UISegmentedControl *)sender;
 
 @end
