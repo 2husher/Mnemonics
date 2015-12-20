@@ -40,8 +40,8 @@
 /* Begin PBXFileReference section */
 		1788A67C1C26163600B131CF /* AIZNumbersStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersStore.h; path = Models/AIZNumbersStore.h; sourceTree = "<group>"; };
 		1788A67D1C26163600B131CF /* AIZNumbersStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersStore.m; path = Models/AIZNumbersStore.m; sourceTree = "<group>"; };
-		178B096E1C26DDC20037A9F0 /* AIZNumberEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberEditViewController.h; path = Controllers/NumbersControllers/AIZNumberEditViewController.h; sourceTree = "<group>"; };
-		178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberEditViewController.m; path = Controllers/NumbersControllers/AIZNumberEditViewController.m; sourceTree = "<group>"; };
+		178B096E1C26DDC20037A9F0 /* AIZNumberEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberEditViewController.h; path = Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController.h; sourceTree = "<group>"; };
+		178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberEditViewController.m; path = Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController.m; sourceTree = "<group>"; };
 		178B09711C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZInfoViewController+UIControls.h"; path = "Controllers/InfoControllers/AIZInfoViewController+UIControls.h"; sourceTree = "<group>"; };
 		178B09721C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZInfoViewController+UIControls.m"; path = "Controllers/InfoControllers/AIZInfoViewController+UIControls.m"; sourceTree = "<group>"; };
 		178B09741C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZInfoViewController+UIConstraints.h"; path = "Controllers/InfoControllers/AIZInfoViewController+UIConstraints.h"; sourceTree = "<group>"; };
@@ -62,12 +62,12 @@
 		17C66DFB1C1B1EFE00625005 /* MnemonicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MnemonicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C66E001C1B1EFE00625005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C66E011C1B1EFE00625005 /* MnemonicsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MnemonicsTests.m; sourceTree = "<group>"; };
-		17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberDetailsViewController.h; path = Controllers/NumbersControllers/AIZNumberDetailsViewController.h; sourceTree = "<group>"; };
-		17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberDetailsViewController.m; path = Controllers/NumbersControllers/AIZNumberDetailsViewController.m; sourceTree = "<group>"; };
+		17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberDetailsViewController.h; path = Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController.h; sourceTree = "<group>"; };
+		17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberDetailsViewController.m; path = Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController.m; sourceTree = "<group>"; };
 		17C66E0E1C1B2DB500625005 /* AIZCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZCustomTableViewCell.h; path = Views/NumbersViews/AIZCustomTableViewCell.h; sourceTree = "<group>"; };
 		17C66E0F1C1B2DB500625005 /* AIZCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZCustomTableViewCell.m; path = Views/NumbersViews/AIZCustomTableViewCell.m; sourceTree = "<group>"; };
-		17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersMasterViewController.h; path = Controllers/NumbersControllers/AIZNumbersMasterViewController.h; sourceTree = "<group>"; };
-		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/AIZNumbersMasterViewController.m; sourceTree = "<group>"; };
+		17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersMasterViewController.h; path = Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController.h; sourceTree = "<group>"; };
+		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController.m; sourceTree = "<group>"; };
 		17C66E171C1B617A00625005 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; };
 		17C66E181C1B617A00625005 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Number.m; path = Models/Number.m; sourceTree = "<group>"; };
 		17E466F81C24A957006412AC /* AIZConvertorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZConvertorsViewController.h; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.h; sourceTree = "<group>"; };
@@ -93,6 +93,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		178B097D1C26F97C0037A9F0 /* NumbersMasterController */ = {
+			isa = PBXGroup;
+			children = (
+				17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */,
+				17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */,
+			);
+			name = NumbersMasterController;
+			sourceTree = "<group>";
+		};
+		178B097E1C26F9850037A9F0 /* NumbersEditController */ = {
+			isa = PBXGroup;
+			children = (
+				178B096E1C26DDC20037A9F0 /* AIZNumberEditViewController.h */,
+				178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */,
+			);
+			name = NumbersEditController;
+			sourceTree = "<group>";
+		};
+		178B097F1C26F98D0037A9F0 /* NumbersDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */,
+				17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */,
+			);
+			name = NumbersDetailsController;
+			sourceTree = "<group>";
+		};
 		17AA36671C22B8E500004A65 /* InfoControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,12 +197,9 @@
 		17E98F5E1C20A77400A4E1AA /* NumbersControllers */ = {
 			isa = PBXGroup;
 			children = (
-				17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */,
-				17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */,
-				17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */,
-				17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */,
-				178B096E1C26DDC20037A9F0 /* AIZNumberEditViewController.h */,
-				178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */,
+				178B097D1C26F97C0037A9F0 /* NumbersMasterController */,
+				178B097F1C26F98D0037A9F0 /* NumbersDetailsController */,
+				178B097E1C26F9850037A9F0 /* NumbersEditController */,
 			);
 			name = NumbersControllers;
 			sourceTree = "<group>";
