@@ -18,4 +18,6 @@
 @property (strong, nonatomic) UILabel *lettersLabel;
 @property (strong, nonatomic) UILabel *wordLabel;
 
+- (void)editNumber;
+
 @end
