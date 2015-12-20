@@ -14,6 +14,10 @@
 @property (strong, nonatomic) UILabel *lettersLabel;
 @property (nonatomic, strong) UISegmentedControl *lettersSegmentedControl;
 
+- (void)toggleControls:(UISegmentedControl *)sender;
+- (void)cancel;
+- (void)save;
+
 @end
 
 
