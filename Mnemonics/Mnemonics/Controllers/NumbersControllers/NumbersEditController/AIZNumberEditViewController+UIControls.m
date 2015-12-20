@@ -45,7 +45,7 @@
     self.lettersLabel.font = [UIFont systemFontOfSize:14.0f];
     [self.lettersLabel sizeToFit];
     [self.view addSubview:self.lettersLabel];
-
+    
     self.lettersSegmentedControl = [[UISegmentedControl alloc]
                                     initWithItems:@[@"ШР", @"ШЦ", @"ЛР", @"ЛЦ"]];
     [self.lettersSegmentedControl addTarget:self

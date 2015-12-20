@@ -57,9 +57,8 @@
         NSInteger number = [digitsStr integerValue];
         if (number < 10)
         {
-            NSArray *lettersPair = @[firstLetters[number],
-                                     secondLetters[number]];
-            [letters addObject:lettersPair];
+            [letters addObject:@[firstLetters[number]]];
+            [letters addObject:@[secondLetters[number]]];
         }
         else if (number > 9 && number < 100)
         {

@@ -36,7 +36,7 @@
 
     if (self.detailItem)
     {
-        self.detailDescriptionLabel.text =
+        self.numberLabel.text =
             [[self.detailItem valueForKey:@"value"] description];
     }
 }
@@ -50,7 +50,7 @@
 
     [self addNavItem];
 
-    [self configureView];
+ //   [self configureView];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
@@ -71,6 +71,8 @@
 
     UINavigationController *nc = [[UINavigationController alloc]
                                   initWithRootViewController:numberEditVC];
+
+    numberEditVC.editItem = self.detailItem;
 
     [self presentViewController:nc animated:YES completion:nil];
 }

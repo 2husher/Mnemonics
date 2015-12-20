@@ -12,8 +12,6 @@
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-
 @property (strong, nonatomic) UILabel *numberLabel;
 @property (strong, nonatomic) UILabel *lettersLabel;
 @property (strong, nonatomic) UILabel *wordLabel;

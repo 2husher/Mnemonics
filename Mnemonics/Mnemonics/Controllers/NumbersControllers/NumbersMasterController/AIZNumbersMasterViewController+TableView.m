@@ -84,7 +84,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         self.detailViewController = [[AIZNumberDetailsViewController alloc] initWithNibName:nil bundle:nil];
     }
     NSManagedObject *object =
-    [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [self.fetchedResultsController objectAtIndexPath:indexPath];
     self.detailViewController.detailItem = object;
     [self.navigationController pushViewController:self.detailViewController
                                          animated:YES];
