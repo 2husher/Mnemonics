@@ -8,11 +8,12 @@
 
 #import "AIZNumbersMasterViewController.h"
 #import "AIZNumbersMasterViewController+TableView.h"
+#import "AIZSampleNumbersStore.h"
 
 @interface AIZNumbersMasterViewController () 
 
 
-@property (nonatomic, strong) NSArray *numbers;
+//@property (nonatomic, strong) NSArray *numbers;
 
 @end
 
@@ -42,26 +43,39 @@
 
 - (void)initNumbers
 {
+    NSArray *numbers = [self.fetchedResultsController fetchedObjects];
+    if ([numbers count] == 0)
+    {
+        [self reloadSampleNumbers];
+    }
+}
+
+- (void)reloadSampleNumbers
+{
+    NSArray *sampleNumbers = [[AIZSampleNumbersStore sharedStore] allNumbers];
+
     NSManagedObjectContext *context =
         [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity =
         [[self.fetchedResultsController fetchRequest] entity];
-    self.numbers = [self.fetchedResultsController fetchedObjects];
-    if ([self.numbers count] == 0)
+    NSUInteger len = [sampleNumbers count];
+    for (NSUInteger num = 0; num < len; num++)
     {
-        NSLog(@"Set 100 of numbers");
-        for (NSInteger num = 0; num < 100; num++)
+        NSManagedObject *newManagedObject =
+        [NSEntityDescription insertNewObjectForEntityForName:[entity name]
+                                      inManagedObjectContext:context];
+        [newManagedObject setValue:sampleNumbers[num][@"section"]
+                            forKey:@"section"];
+        [newManagedObject setValue:sampleNumbers[num][@"value"]
+                            forKey:@"value"];
+        [newManagedObject setValue:sampleNumbers[num][@"letters"]
+                            forKey:@"letters"];
+        [newManagedObject setValue:sampleNumbers[num][@"word"]
+                            forKey:@"word"];
+        NSError *error = nil;
+        if (![context save:&error])
         {
-            NSManagedObject *newManagedObject =
-            [NSEntityDescription insertNewObjectForEntityForName:[entity name]
-                                          inManagedObjectContext:context];
-            [newManagedObject setValue:[NSNumber numberWithInteger:num]
-                                forKey:@"value"];
-            NSError *error = nil;
-            if (![context save:&error])
-            {
-                NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
-            }
+            NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
         }
         self.fetchedResultsController = nil;
     }
@@ -73,12 +87,16 @@
         return _fetchedResultsController;
     }
 
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Number"];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]
+                                    initWithEntityName:@"Number"];
     [fetchRequest setFetchBatchSize:20];
-    NSSortDescriptor *sortDescriptor =
+    NSSortDescriptor *sectionSort =
+        [[NSSortDescriptor alloc] initWithKey:@"section"
+                                    ascending:YES];
+    NSSortDescriptor *valueSort =
         [[NSSortDescriptor alloc] initWithKey:@"value"
                                     ascending:YES];
-    NSArray *sortDescriptors = @[sortDescriptor];
+    NSArray *sortDescriptors = @[sectionSort, valueSort];
 
     [fetchRequest setSortDescriptors:sortDescriptors];
 
@@ -86,7 +104,7 @@
         [[NSFetchedResultsController alloc]
          initWithFetchRequest:fetchRequest
          managedObjectContext:self.managedObjectContext
-         sectionNameKeyPath:nil
+         sectionNameKeyPath:@"section"
          cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;

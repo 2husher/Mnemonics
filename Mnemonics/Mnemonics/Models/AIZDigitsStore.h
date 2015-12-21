@@ -1,5 +1,5 @@
 //
-//  AIZNumbersStore.h
+//  AIZDigitsStore.h
 //  Mnemonics
 //
 //  Created by X on 20/12/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AIZNumbersStore : NSObject
+@interface AIZDigitsStore : NSObject
 
 + (instancetype)sharedStore;
 

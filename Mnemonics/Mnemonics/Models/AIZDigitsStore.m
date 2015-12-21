@@ -1,24 +1,24 @@
 //
-//  AIZNumbersStore.m
+//  AIZDigitsStore.m
 //  Mnemonics
 //
 //  Created by X on 20/12/15.
 //  Copyright (c) 2015 Alex Izotov. All rights reserved.
 //
 
-#import "AIZNumbersStore.h"
+#import "AIZDigitsStore.h"
 
-@interface AIZNumbersStore ()
+@interface AIZDigitsStore ()
 
-@property (nonatomic) NSArray *privateNumbers;
+@property (nonatomic) NSArray *privateDigits;
 
 @end
 
-@implementation AIZNumbersStore
+@implementation AIZDigitsStore
 
 + (instancetype)sharedStore
 {
-    static AIZNumbersStore *sharedStore = nil;
+    static AIZDigitsStore *sharedStore = nil;
 
     if (!sharedStore)
     {
@@ -30,7 +30,7 @@
 - (instancetype)init
 {
     @throw [NSException exceptionWithName:@"Singleton"
-                                   reason:@"Use +[AIZNumbersStore sharedStore]"
+                                   reason:@"Use +[AIZDigitsStore sharedStore]"
                                  userInfo:nil];
     return nil;
 }
@@ -40,7 +40,7 @@
     self = [super init];
     if (self)
     {
-        self.privateNumbers =
+        self.privateDigits =
         @[@[@"Н", @"Г", @"Д", @"К", @"Ч", @"П", @"Ш", @"С", @"В", @"Р"],
           @[@"М", @"Ж", @"Т", @"Х", @"Щ", @"Б", @"Л", @"З", @"Ф", @"Ц"]];
     }
@@ -50,10 +50,12 @@
 - (NSArray *)getLettersForDigits:(NSString *)digitsStr
 {
     NSMutableArray *letters = [[NSMutableArray alloc] init];
-    NSArray *firstLetters  = self.privateNumbers[0];
-    NSArray *secondLetters = self.privateNumbers[1];
+    NSArray *firstLetters  = self.privateDigits[0];
+    NSArray *secondLetters = self.privateDigits[1];
     if (digitsStr.length == 1 || digitsStr.length == 2)
     {
+#warning "Not suitable for 01 ... 09"
+
         NSInteger number = [digitsStr integerValue];
         if (number < 10)
         {
@@ -96,10 +98,10 @@
     {
         NSString *ch = [[lettersStr substringWithRange:NSMakeRange(i, 1)]
                         uppercaseString];
-        NSUInteger index = [self.privateNumbers[0] indexOfObject:ch];
+        NSUInteger index = [self.privateDigits[0] indexOfObject:ch];
         if (index == NSNotFound)
         {
-            index = [self.privateNumbers[1] indexOfObject:ch];
+            index = [self.privateDigits[1] indexOfObject:ch];
             if (index == NSNotFound)
             {
                 continue;

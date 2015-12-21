@@ -9,7 +9,7 @@
 #import "AIZNumberEditViewController.h"
 #import "AIZNumberEditViewController+UIControls.h"
 #import "AIZNumberEditViewController+UIConstraints.h"
-#import "AIZNumbersStore.h"
+#import "AIZDigitsStore.h"
 
 @interface AIZNumberEditViewController ()
 
@@ -35,7 +35,7 @@
         [[self.editItem valueForKey:@"value"] description];
 
         [self.lettersSegmentedControl removeAllSegments];
-        NSArray *letters = [[AIZNumbersStore sharedStore]
+        NSArray *letters = [[AIZDigitsStore sharedStore]
                             getLettersForDigits:self.numberLabel.text];
         NSUInteger len = [letters count];
         for (NSUInteger i = 0; i < len; i++)

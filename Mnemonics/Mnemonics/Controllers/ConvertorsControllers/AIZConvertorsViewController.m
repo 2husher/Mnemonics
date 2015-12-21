@@ -7,7 +7,7 @@
 //
 
 #import "AIZConvertorsViewController.h"
-#import "AIZNumbersStore.h"
+#import "AIZDigitsStore.h"
 #import "AIZConvertorsViewController+UIControls.h"
 #import "AIZConvertorsViewController+UIConstraints.h"
 
@@ -108,7 +108,7 @@
 
 -(void)convert2Number:(NSString *)text
 {
-    NSArray *letters = [[AIZNumbersStore sharedStore]
+    NSArray *letters = [[AIZDigitsStore sharedStore]
                         getDigitsForLetters:text];
     self.outputTextField.text = [letters componentsJoinedByString:@""];
 }
