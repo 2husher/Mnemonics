@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1712C03E1C29E3E6005C2DCA /* AIZAllGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */; };
 		178190A61C28303A0016BA81 /* AIZSampleNumbersStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 178190A51C28303A0016BA81 /* AIZSampleNumbersStore.m */; };
 		178190B21C285BA60016BA81 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 178190B11C285BA60016BA81 /* Number.m */; };
 		1788A67E1C26163600B131CF /* AIZDigitsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1788A67D1C26163600B131CF /* AIZDigitsStore.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1712C03C1C29E3E6005C2DCA /* AIZAllGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZAllGamesViewController.h; path = Controllers/GamesControllers/AIZAllGamesViewController.h; sourceTree = "<group>"; };
+		1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZAllGamesViewController.m; path = Controllers/GamesControllers/AIZAllGamesViewController.m; sourceTree = "<group>"; };
 		178190A41C28303A0016BA81 /* AIZSampleNumbersStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZSampleNumbersStore.h; path = Models/AIZSampleNumbersStore.h; sourceTree = "<group>"; };
 		178190A51C28303A0016BA81 /* AIZSampleNumbersStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZSampleNumbersStore.m; path = Models/AIZSampleNumbersStore.m; sourceTree = "<group>"; };
 		178190B01C285BA60016BA81 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; };
@@ -111,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1712C03B1C29E353005C2DCA /* GamesControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1712C03C1C29E3E6005C2DCA /* AIZAllGamesViewController.h */,
+				1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */,
+			);
+			name = GamesControllers;
+			sourceTree = "<group>";
+		};
 		178B097D1C26F97C0037A9F0 /* NumbersMasterController */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +267,7 @@
 			children = (
 				17E98F651C20AC7F00A4E1AA /* Base */,
 				17E98F5E1C20A77400A4E1AA /* NumbersControllers */,
+				1712C03B1C29E353005C2DCA /* GamesControllers */,
 				17E466F71C24A924006412AC /* ConvertorsControllers */,
 				17AA36671C22B8E500004A65 /* InfoControllers */,
 			);
@@ -410,6 +423,7 @@
 				17C66DEB1C1B1EFE00625005 /* Mnemonics.xcdatamodeld in Sources */,
 				17C66E101C1B2DB500625005 /* AIZCustomTableViewCell.m in Sources */,
 				1788A67E1C26163600B131CF /* AIZDigitsStore.m in Sources */,
+				1712C03E1C29E3E6005C2DCA /* AIZAllGamesViewController.m in Sources */,
 				178B098E1C27067C0037A9F0 /* AIZNumbersMasterViewController+TableView.m in Sources */,
 				178B09701C26DDC20037A9F0 /* AIZNumberEditViewController.m in Sources */,
 			);

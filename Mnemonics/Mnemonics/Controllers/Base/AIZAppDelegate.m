@@ -10,10 +10,12 @@
 #import "AIZNumbersMasterViewController.h"
 #import "AIZInfoViewController.h"
 #import "AIZConvertorsViewController.h"
+#import "AIZAllGamesViewController.h"
 
 @interface AIZAppDelegate ()
 
 @property (nonatomic, strong) UINavigationController *numbersNavC;
+@property (nonatomic, strong) UINavigationController *allGamesNavC;
 @property (nonatomic, strong) UINavigationController *convertorsNavC;
 @property (nonatomic, strong) UINavigationController *infoNavC;
 
@@ -30,10 +32,12 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     self.tabBarController = [[UITabBarController alloc] init];
 
     [self addNumbersTab];
+    [self addGamesTab];
     [self addConvertorsTab];
     [self addInfoTab];
 
     self.tabBarController.viewControllers = @[self.numbersNavC,
+                                              self.allGamesNavC,
                                               self.convertorsNavC,
                                               self.infoNavC];
     self.window.rootViewController = self.tabBarController;
@@ -52,6 +56,15 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                         initWithRootViewController:numbersMasterVC];
 
     numbersMasterVC.managedObjectContext = self.managedObjectContext;
+}
+
+-(void)addGamesTab
+{
+    AIZAllGamesViewController *allGamesVC =
+        [[AIZAllGamesViewController alloc] initWithNibName:nil
+                                                    bundle:nil];
+    self.allGamesNavC = [[UINavigationController alloc]
+                         initWithRootViewController:allGamesVC];
 }
 
 - (void)addConvertorsTab
