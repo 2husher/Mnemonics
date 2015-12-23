@@ -7,8 +7,13 @@
 //
 
 #import "AIZAllGamesViewController.h"
+#import "AIZAllGamesViewController+UIControls.h"
+#import "AIZAllGamesViewController+UIConstraints.h"
+#import "AIZNumber2WordViewController.h"
 
 @interface AIZAllGamesViewController ()
+
+@property (nonatomic, strong) AIZNumber2WordViewController *number2WordVC;
 
 @end
 
@@ -31,6 +36,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self addGamesButtons];
+    [self addGamesNumbersConstraints];
+}
+
+- (void)runNumber2WordGame
+{
+    self.number2WordVC = [[AIZNumber2WordViewController alloc] init];
+    [self.navigationController pushViewController:self.number2WordVC
+                                         animated:YES];
+}
+
+- (void)runWord2NumberGame
+{
+    
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

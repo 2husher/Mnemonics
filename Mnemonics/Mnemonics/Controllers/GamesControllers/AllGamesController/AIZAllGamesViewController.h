@@ -10,4 +10,10 @@
 
 @interface AIZAllGamesViewController : UIViewController
 
+@property (strong, nonatomic) UIButton *number2WordGameButton;
+@property (strong, nonatomic) UIButton *word2NumberGameButton;
+
+- (void)runNumber2WordGame;
+- (void)runWord2NumberGame;
+
 @end
