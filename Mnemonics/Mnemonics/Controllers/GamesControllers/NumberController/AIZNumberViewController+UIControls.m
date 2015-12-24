@@ -10,10 +10,10 @@
 
 @implementation AIZNumberViewController (UIControls)
 
-- (void)addNumberLabel
+- (void)addNumberLabelWithTitle:(NSString *)value
 {
     self.numberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.numberLabel.text = @"69";
+    self.numberLabel.text = value;
     self.numberLabel.textAlignment = NSTextAlignmentCenter;
     self.numberLabel.font = [UIFont systemFontOfSize:100.0f];
     [self.numberLabel sizeToFit];

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AIZNumberViewController : UIViewController
 
 @property (strong, nonatomic) UILabel *numberLabel;
+
+- (instancetype)initWithNumber:(NSManagedObject *)number;
 
 @end

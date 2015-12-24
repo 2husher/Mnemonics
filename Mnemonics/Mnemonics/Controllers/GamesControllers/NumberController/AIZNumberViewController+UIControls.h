@@ -10,6 +10,6 @@
 
 @interface AIZNumberViewController (UIControls)
 
-- (void)addNumberLabel;
+- (void)addNumberLabelWithTitle:(NSString *)value;
 
 @end
