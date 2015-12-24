@@ -10,28 +10,28 @@
 
 @implementation AIZNumber2WordViewController (UIConstraints)
 
-- (void)addToolBarConstraints
-{
-    self.toolBar.translatesAutoresizingMaskIntoConstraints = NO;
-
-    NSDictionary *nameMap = @{ @"bottomGuide" : self.bottomLayoutGuide,
-                               @"toolBar" : self.toolBar };
-
-    NSArray *horizontalConstraints =
-    [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toolBar]|"
-                                            options:0
-                                            metrics:nil
-                                              views:nameMap];
-
-    [self.view addConstraints:horizontalConstraints];
-
-    NSArray *verticalConstraints =
-    [NSLayoutConstraint constraintsWithVisualFormat:@"V:[toolBar(==44)]-[bottomGuide]"
-                                            options:0
-                                            metrics:nil
-                                              views:nameMap];
-
-    [self.view addConstraints:verticalConstraints];
-}
+//- (void)addToolBarConstraints
+//{
+//    self.toolBar.translatesAutoresizingMaskIntoConstraints = NO;
+//
+//    NSDictionary *nameMap = @{ @"bottomGuide" : self.bottomLayoutGuide,
+//                               @"toolBar" : self.toolBar };
+//
+//    NSArray *horizontalConstraints =
+//    [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toolBar]|"
+//                                            options:0
+//                                            metrics:nil
+//                                              views:nameMap];
+//
+//    [self.view addConstraints:horizontalConstraints];
+//
+//    NSArray *verticalConstraints =
+//    [NSLayoutConstraint constraintsWithVisualFormat:@"V:[toolBar(==44)]-[bottomGuide]"
+//                                            options:0
+//                                            metrics:nil
+//                                              views:nameMap];
+//
+//    [self.view addConstraints:verticalConstraints];
+//}
 
 @end
