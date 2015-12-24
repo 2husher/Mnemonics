@@ -10,7 +10,6 @@
 
 @interface AIZNumber2WordViewController (UIControls)
 
-- (void)addToolBar;
 - (void)addNavItem;
 
 @end

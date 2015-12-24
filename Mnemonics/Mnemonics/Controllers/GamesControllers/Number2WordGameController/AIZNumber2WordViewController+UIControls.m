@@ -10,28 +10,13 @@
 
 @implementation AIZNumber2WordViewController (UIControls)
 
-- (void)addToolBar
-{
-    self.toolBar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-    self.toolBar.opaque = NO;
-
-    UIBarButtonItem *switchViews =
-    [[UIBarButtonItem alloc] initWithTitle:@"Switch Views"
-                                     style:UIBarButtonItemStylePlain
-                                    target:self
-                                    action:@selector(switchViews)];
-
-    self.toolBar.items = @[switchViews];
-
-    [self.view addSubview:self.toolBar];
-}
-
 - (void)addNavItem
 {
     UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
-                            initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                            initWithTitle:@"Options"
+                            style:UIBarButtonItemStylePlain
                             target:self
-                            action:@selector(switchViews)];
+                            action:@selector(setGameOptions)];
     self.navigationItem.rightBarButtonItem = bbi;
 }
 
