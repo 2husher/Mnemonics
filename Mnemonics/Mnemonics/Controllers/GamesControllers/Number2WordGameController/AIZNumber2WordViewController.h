@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface AIZNumber2WordViewController : UIViewController
+@interface AIZNumber2WordViewController : UIViewController <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) UIToolbar *toolBar;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+//@property (nonatomic, strong) UIToolbar *toolBar;
+
+@property (nonatomic, strong) NSManagedObject *number;
 
 @end

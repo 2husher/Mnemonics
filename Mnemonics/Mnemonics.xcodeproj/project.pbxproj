@@ -20,7 +20,6 @@
 		178006031C2B0C9700E38C5A /* AIZWordViewController+UIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 178006021C2B0C9700E38C5A /* AIZWordViewController+UIControls.m */; };
 		178006061C2B0CA700E38C5A /* AIZWordViewController+UIConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 178006051C2B0CA700E38C5A /* AIZWordViewController+UIConstraints.m */; };
 		178190A61C28303A0016BA81 /* AIZSampleNumbersStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 178190A51C28303A0016BA81 /* AIZSampleNumbersStore.m */; };
-		178190B21C285BA60016BA81 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 178190B11C285BA60016BA81 /* Number.m */; };
 		1788A67E1C26163600B131CF /* AIZDigitsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1788A67D1C26163600B131CF /* AIZDigitsStore.m */; };
 		178B09701C26DDC20037A9F0 /* AIZNumberEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */; };
 		178B09731C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B09721C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m */; };
@@ -41,6 +40,9 @@
 		17C66E0D1C1B2AFA00625005 /* AIZNumberDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */; };
 		17C66E101C1B2DB500625005 /* AIZCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66E0F1C1B2DB500625005 /* AIZCustomTableViewCell.m */; };
 		17C66E131C1B319800625005 /* AIZNumbersMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */; };
+		17CC22861C2C335F00B29CB1 /* AIZGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CC22851C2C335F00B29CB1 /* AIZGameStore.m */; };
+		17CC22891C2C3FC400B29CB1 /* AIZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */; };
+		17CC228C1C2C991400B29CB1 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CC228B1C2C991400B29CB1 /* Number.m */; };
 		17E466FA1C24A957006412AC /* AIZConvertorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E466F91C24A957006412AC /* AIZConvertorsViewController.m */; };
 		17E98F641C20AB5D00A4E1AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E98F621C20AB5D00A4E1AA /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -57,13 +59,13 @@
 
 /* Begin PBXFileReference section */
 		1712C03C1C29E3E6005C2DCA /* AIZAllGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZAllGamesViewController.h; path = Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController.h; sourceTree = "<group>"; };
-		1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZAllGamesViewController.m; path = Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController.m; sourceTree = "<group>"; };
+		1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZAllGamesViewController.m; path = Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		178005E11C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZAllGamesViewController+UIControls.h"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIControls.h"; sourceTree = "<group>"; };
 		178005E21C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZAllGamesViewController+UIControls.m"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIControls.m"; sourceTree = "<group>"; };
 		178005E41C2AFFBF00E38C5A /* AIZAllGamesViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZAllGamesViewController+UIConstraints.h"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIConstraints.h"; sourceTree = "<group>"; };
 		178005E51C2AFFBF00E38C5A /* AIZAllGamesViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZAllGamesViewController+UIConstraints.m"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIConstraints.m"; sourceTree = "<group>"; };
 		178005EA1C2B073300E38C5A /* AIZNumber2WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumber2WordViewController.h; path = Controllers/GamesControllers/Number2WordGameController/AIZNumber2WordViewController.h; sourceTree = "<group>"; };
-		178005EB1C2B073300E38C5A /* AIZNumber2WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumber2WordViewController.m; path = Controllers/GamesControllers/Number2WordGameController/AIZNumber2WordViewController.m; sourceTree = "<group>"; };
+		178005EB1C2B073300E38C5A /* AIZNumber2WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZNumber2WordViewController.m; path = Controllers/GamesControllers/Number2WordGameController/AIZNumber2WordViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		178005ED1C2B079700E38C5A /* AIZNumber2WordViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZNumber2WordViewController+UIControls.h"; path = "Controllers/GamesControllers/Number2WordGameController/AIZNumber2WordViewController+UIControls.h"; sourceTree = "<group>"; };
 		178005EE1C2B079700E38C5A /* AIZNumber2WordViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZNumber2WordViewController+UIControls.m"; path = "Controllers/GamesControllers/Number2WordGameController/AIZNumber2WordViewController+UIControls.m"; sourceTree = "<group>"; };
 		178005F01C2B07F800E38C5A /* AIZNumber2WordViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZNumber2WordViewController+UIConstraints.h"; path = "Controllers/GamesControllers/Number2WordGameController/AIZNumber2WordViewController+UIConstraints.h"; sourceTree = "<group>"; };
@@ -81,21 +83,19 @@
 		178006041C2B0CA700E38C5A /* AIZWordViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZWordViewController+UIConstraints.h"; path = "Controllers/GamesControllers/WordController/AIZWordViewController+UIConstraints.h"; sourceTree = "<group>"; };
 		178006051C2B0CA700E38C5A /* AIZWordViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZWordViewController+UIConstraints.m"; path = "Controllers/GamesControllers/WordController/AIZWordViewController+UIConstraints.m"; sourceTree = "<group>"; };
 		178190A41C28303A0016BA81 /* AIZSampleNumbersStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZSampleNumbersStore.h; path = Models/AIZSampleNumbersStore.h; sourceTree = "<group>"; };
-		178190A51C28303A0016BA81 /* AIZSampleNumbersStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZSampleNumbersStore.m; path = Models/AIZSampleNumbersStore.m; sourceTree = "<group>"; };
-		178190B01C285BA60016BA81 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; };
-		178190B11C285BA60016BA81 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Number.m; path = Models/Number.m; sourceTree = "<group>"; };
+		178190A51C28303A0016BA81 /* AIZSampleNumbersStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZSampleNumbersStore.m; path = Models/AIZSampleNumbersStore.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1788A67C1C26163600B131CF /* AIZDigitsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZDigitsStore.h; path = Models/AIZDigitsStore.h; sourceTree = "<group>"; };
 		1788A67D1C26163600B131CF /* AIZDigitsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZDigitsStore.m; path = Models/AIZDigitsStore.m; sourceTree = "<group>"; };
-		178B096E1C26DDC20037A9F0 /* AIZNumberEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberEditViewController.h; path = Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController.h; sourceTree = "<group>"; };
-		178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberEditViewController.m; path = Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController.m; sourceTree = "<group>"; };
+		178B096E1C26DDC20037A9F0 /* AIZNumberEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AIZNumberEditViewController.h; path = Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		178B096F1C26DDC20037A9F0 /* AIZNumberEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZNumberEditViewController.m; path = Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		178B09711C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZInfoViewController+UIControls.h"; path = "Controllers/InfoControllers/AIZInfoViewController+UIControls.h"; sourceTree = "<group>"; };
 		178B09721C26EFBD0037A9F0 /* AIZInfoViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZInfoViewController+UIControls.m"; path = "Controllers/InfoControllers/AIZInfoViewController+UIControls.m"; sourceTree = "<group>"; };
 		178B09741C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZInfoViewController+UIConstraints.h"; path = "Controllers/InfoControllers/AIZInfoViewController+UIConstraints.h"; sourceTree = "<group>"; };
-		178B09751C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZInfoViewController+UIConstraints.m"; path = "Controllers/InfoControllers/AIZInfoViewController+UIConstraints.m"; sourceTree = "<group>"; };
+		178B09751C26F3380037A9F0 /* AIZInfoViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "AIZInfoViewController+UIConstraints.m"; path = "Controllers/InfoControllers/AIZInfoViewController+UIConstraints.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		178B09771C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZConvertorsViewController+UIControls.h"; path = "Controllers/ConvertorsControllers/AIZConvertorsViewController+UIControls.h"; sourceTree = "<group>"; };
 		178B09781C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZConvertorsViewController+UIControls.m"; path = "Controllers/ConvertorsControllers/AIZConvertorsViewController+UIControls.m"; sourceTree = "<group>"; };
 		178B097A1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AIZConvertorsViewController+UIConstraints.h"; sourceTree = "<group>"; };
-		178B097B1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AIZConvertorsViewController+UIConstraints.m"; sourceTree = "<group>"; };
+		178B097B1C26F6350037A9F0 /* AIZConvertorsViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "AIZConvertorsViewController+UIConstraints.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		178B09801C26FB670037A9F0 /* AIZNumberEditViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZNumberEditViewController+UIControls.h"; path = "Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController+UIControls.h"; sourceTree = "<group>"; };
 		178B09811C26FB670037A9F0 /* AIZNumberEditViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZNumberEditViewController+UIControls.m"; path = "Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController+UIControls.m"; sourceTree = "<group>"; };
 		178B09831C26FBAF0037A9F0 /* AIZNumberEditViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZNumberEditViewController+UIConstraints.h"; path = "Controllers/NumbersControllers/NumbersEditController/AIZNumberEditViewController+UIConstraints.h"; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 		178B09891C2705E40037A9F0 /* AIZNumberDetailsViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZNumberDetailsViewController+UIConstraints.h"; path = "Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController+UIConstraints.h"; sourceTree = "<group>"; };
 		178B098A1C2705E40037A9F0 /* AIZNumberDetailsViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZNumberDetailsViewController+UIConstraints.m"; path = "Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController+UIConstraints.m"; sourceTree = "<group>"; };
 		178B098C1C27067C0037A9F0 /* AIZNumbersMasterViewController+TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZNumbersMasterViewController+TableView.h"; path = "Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController+TableView.h"; sourceTree = "<group>"; };
-		178B098D1C27067C0037A9F0 /* AIZNumbersMasterViewController+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZNumbersMasterViewController+TableView.m"; path = "Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController+TableView.m"; sourceTree = "<group>"; };
+		178B098D1C27067C0037A9F0 /* AIZNumbersMasterViewController+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "AIZNumbersMasterViewController+TableView.m"; path = "Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController+TableView.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17AA36681C22B91B00004A65 /* AIZInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZInfoViewController.h; path = Controllers/InfoControllers/AIZInfoViewController.h; sourceTree = "<group>"; };
-		17AA36691C22B91B00004A65 /* AIZInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZInfoViewController.m; path = Controllers/InfoControllers/AIZInfoViewController.m; sourceTree = "<group>"; };
+		17AA36691C22B91B00004A65 /* AIZInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZInfoViewController.m; path = Controllers/InfoControllers/AIZInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17C66DDF1C1B1EFE00625005 /* Mnemonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C66DE31C1B1EFE00625005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Assets/Info.plist; sourceTree = "<group>"; };
 		17C66DE41C1B1EFE00625005 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Assets/main.m; sourceTree = "<group>"; };
@@ -118,14 +118,20 @@
 		17C66DFB1C1B1EFE00625005 /* MnemonicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MnemonicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C66E001C1B1EFE00625005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C66E011C1B1EFE00625005 /* MnemonicsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MnemonicsTests.m; sourceTree = "<group>"; };
-		17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumberDetailsViewController.h; path = Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController.h; sourceTree = "<group>"; };
-		17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumberDetailsViewController.m; path = Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController.m; sourceTree = "<group>"; };
+		17C66E0B1C1B2AFA00625005 /* AIZNumberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AIZNumberDetailsViewController.h; path = Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		17C66E0C1C1B2AFA00625005 /* AIZNumberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZNumberDetailsViewController.m; path = Controllers/NumbersControllers/NumbersDetailsController/AIZNumberDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17C66E0E1C1B2DB500625005 /* AIZCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZCustomTableViewCell.h; path = Views/NumbersViews/AIZCustomTableViewCell.h; sourceTree = "<group>"; };
 		17C66E0F1C1B2DB500625005 /* AIZCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZCustomTableViewCell.m; path = Views/NumbersViews/AIZCustomTableViewCell.m; sourceTree = "<group>"; };
 		17C66E111C1B319800625005 /* AIZNumbersMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZNumbersMasterViewController.h; path = Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController.h; sourceTree = "<group>"; };
-		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController.m; sourceTree = "<group>"; };
+		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		17CC22841C2C335F00B29CB1 /* AIZGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZGameStore.h; path = Models/AIZGameStore.h; sourceTree = "<group>"; };
+		17CC22851C2C335F00B29CB1 /* AIZGameStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZGameStore.m; path = Models/AIZGameStore.m; sourceTree = "<group>"; };
+		17CC22871C2C3FC400B29CB1 /* AIZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZSettingsViewController.h; path = Controllers/GamesControllers/Number2WordGameController/AIZSettingsViewController.h; sourceTree = "<group>"; };
+		17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZSettingsViewController.m; path = Controllers/GamesControllers/Number2WordGameController/AIZSettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		17CC228A1C2C991400B29CB1 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		17CC228B1C2C991400B29CB1 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = Number.m; path = Models/Number.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17E466F81C24A957006412AC /* AIZConvertorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZConvertorsViewController.h; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.h; sourceTree = "<group>"; };
-		17E466F91C24A957006412AC /* AIZConvertorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZConvertorsViewController.m; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.m; sourceTree = "<group>"; };
+		17E466F91C24A957006412AC /* AIZConvertorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZConvertorsViewController.m; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17E98F631C20AB5D00A4E1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Mnemonics/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +187,8 @@
 				178005EE1C2B079700E38C5A /* AIZNumber2WordViewController+UIControls.m */,
 				178005F01C2B07F800E38C5A /* AIZNumber2WordViewController+UIConstraints.h */,
 				178005F11C2B07F800E38C5A /* AIZNumber2WordViewController+UIConstraints.m */,
+				17CC22871C2C3FC400B29CB1 /* AIZSettingsViewController.h */,
+				17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */,
 			);
 			name = Number2WordGameController;
 			sourceTree = "<group>";
@@ -390,12 +398,14 @@
 		17EE98581C204D1400EB9905 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				178190B01C285BA60016BA81 /* Number.h */,
-				178190B11C285BA60016BA81 /* Number.m */,
+				17CC228A1C2C991400B29CB1 /* Number.h */,
+				17CC228B1C2C991400B29CB1 /* Number.m */,
 				1788A67C1C26163600B131CF /* AIZDigitsStore.h */,
 				1788A67D1C26163600B131CF /* AIZDigitsStore.m */,
 				178190A41C28303A0016BA81 /* AIZSampleNumbersStore.h */,
 				178190A51C28303A0016BA81 /* AIZSampleNumbersStore.m */,
+				17CC22841C2C335F00B29CB1 /* AIZGameStore.h */,
+				17CC22851C2C335F00B29CB1 /* AIZGameStore.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -503,13 +513,14 @@
 				17E466FA1C24A957006412AC /* AIZConvertorsViewController.m in Sources */,
 				178006061C2B0CA700E38C5A /* AIZWordViewController+UIConstraints.m in Sources */,
 				178006001C2B0C5B00E38C5A /* AIZWordViewController.m in Sources */,
+				17CC228C1C2C991400B29CB1 /* Number.m in Sources */,
+				17CC22891C2C3FC400B29CB1 /* AIZSettingsViewController.m in Sources */,
 				178B098B1C2705E40037A9F0 /* AIZNumberDetailsViewController+UIConstraints.m in Sources */,
 				178005EF1C2B079700E38C5A /* AIZNumber2WordViewController+UIControls.m in Sources */,
 				178005F71C2B0B0900E38C5A /* AIZNumberViewController.m in Sources */,
 				178005EC1C2B073300E38C5A /* AIZNumber2WordViewController.m in Sources */,
 				17C66E0D1C1B2AFA00625005 /* AIZNumberDetailsViewController.m in Sources */,
 				178005E31C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.m in Sources */,
-				178190B21C285BA60016BA81 /* Number.m in Sources */,
 				178005E61C2AFFBF00E38C5A /* AIZAllGamesViewController+UIConstraints.m in Sources */,
 				178B09821C26FB670037A9F0 /* AIZNumberEditViewController+UIControls.m in Sources */,
 				178B09791C26F4730037A9F0 /* AIZConvertorsViewController+UIControls.m in Sources */,
@@ -531,6 +542,7 @@
 				1712C03E1C29E3E6005C2DCA /* AIZAllGamesViewController.m in Sources */,
 				178006031C2B0C9700E38C5A /* AIZWordViewController+UIControls.m in Sources */,
 				178B098E1C27067C0037A9F0 /* AIZNumbersMasterViewController+TableView.m in Sources */,
+				17CC22861C2C335F00B29CB1 /* AIZGameStore.m in Sources */,
 				178B09701C26DDC20037A9F0 /* AIZNumberEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
