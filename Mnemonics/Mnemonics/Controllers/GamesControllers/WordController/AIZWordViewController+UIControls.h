@@ -10,6 +10,6 @@
 
 @interface AIZWordViewController (UIControls)
 
-- (void)addWordLabel;
+- (void)addNumberLabelWithTitle:(NSString *)word;
 
 @end

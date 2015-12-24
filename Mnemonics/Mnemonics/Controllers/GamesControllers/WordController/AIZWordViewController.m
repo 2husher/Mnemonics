@@ -12,6 +12,8 @@
 
 @interface AIZWordViewController ()
 
+@property (nonatomic, strong) NSString *word;
+
 @end
 
 @implementation AIZWordViewController
@@ -24,11 +26,29 @@
     self.view = view;
 }
 
+- (instancetype)initWithNumber:(NSManagedObject *)number
+{
+    self = [super init];
+    if (self)
+    {
+        self.word = [number valueForKey:@"word"];
+    }
+    return self;
+}
+
+- (instancetype)init
+{
+    @throw [NSException exceptionWithName:@"NSManagedObject is needed"
+                                   reason:@"Use initWithNumber: instead"
+                                 userInfo:nil];
+    return nil;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    [self addWordLabel];
+    [self addNumberLabelWithTitle:self.word];
     [self addWordLabelConstraints];
 }
 

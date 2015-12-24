@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AIZWordViewController : UIViewController
 
 @property (strong, nonatomic) UILabel *wordLabel;
+
+- (instancetype)initWithNumber:(NSManagedObject *)number;
 
 @end

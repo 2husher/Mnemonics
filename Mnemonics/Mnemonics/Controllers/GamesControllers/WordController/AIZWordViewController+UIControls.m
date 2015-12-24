@@ -10,10 +10,10 @@
 
 @implementation AIZWordViewController (UIControls)
 
-- (void)addWordLabel
+- (void)addNumberLabelWithTitle:(NSString *)word
 {
     self.wordLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.wordLabel.text = @"ШАР";
+    self.wordLabel.text = word;
     self.wordLabel.textAlignment = NSTextAlignmentCenter;
     self.wordLabel.font = [UIFont systemFontOfSize:100.0f];
     [self.wordLabel sizeToFit];
