@@ -14,4 +14,6 @@
 
 - (NSArray *)allNumbers;
 
+- (NSUInteger)indexByValue:(NSString *)value;
+
 @end
