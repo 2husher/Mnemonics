@@ -72,6 +72,8 @@
                             forKey:@"letters"];
         [newManagedObject setValue:sampleNumbers[num][@"word"]
                             forKey:@"word"];
+        [newManagedObject setValue:sampleNumbers[num][@"index"]
+                            forKey:@"index"];
         NSError *error = nil;
         if (![context save:&error])
         {
