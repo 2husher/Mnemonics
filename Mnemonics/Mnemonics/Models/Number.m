@@ -2,7 +2,7 @@
 //  Number.m
 //  Mnemonics
 //
-//  Created by X on 21/12/15.
+//  Created by X on 25/12/15.
 //  Copyright (c) 2015 Alex Izotov. All rights reserved.
 //
 
@@ -11,10 +11,11 @@
 
 @implementation Number
 
-@dynamic letters;
 @dynamic image;
+@dynamic letters;
+@dynamic section;
 @dynamic value;
 @dynamic word;
-@dynamic section;
+@dynamic index;
 
 @end
