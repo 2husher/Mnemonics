@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class AIZSettingsViewController;
+
+@protocol AIZSettingsDelegate <NSObject>
+- (void)saveSettings: (AIZSettingsViewController *)sender;
+@end
+
 @interface AIZSettingsViewController : UIViewController
+
+@property (nonatomic, weak) id <AIZSettingsDelegate> delegate;
+@property (nonatomic, strong) id settingsItem;
 
 @property (nonatomic, strong) UILabel *fromValueLabel;
 @property (nonatomic, strong) UILabel *toValueLabel;
@@ -17,5 +26,7 @@
 @property (nonatomic, strong) UITextField *toValueTextField;
 
 @property (nonatomic, strong) UISegmentedControl *gettingType;
+
+@property (nonatomic, strong) UITextView *currentSettingTextView;
 
 @end
