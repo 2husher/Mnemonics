@@ -9,26 +9,18 @@
 #import "AIZNumber2WordViewController.h"
 #import "AIZNumber2WordViewController+UIControls.h"
 #import "AIZNumber2WordViewController+UIConstraints.h"
-#import "AIZNumberViewController.h"
-#import "AIZWordViewController.h"
+#import "AIZNumber2WordViewController+SwitchViews.h"
 #import "AIZGameStore.h"
-#import "AIZSettingsViewController.h"
 #import "AIZSampleNumbersStore.h"
 
 @interface AIZNumber2WordViewController ()
 
-@property (nonatomic, strong) AIZNumberViewController *numberVC;
-@property (nonatomic, strong) AIZWordViewController *wordVC;
-
+@property (nonatomic, strong) NSMutableDictionary *settingItem;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 
 @end
 
 @implementation AIZNumber2WordViewController
-
-+ (void)initialize
-{
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
@@ -49,13 +41,11 @@
     [self addTapGR];
     [self addNavItem];
 
-    [self initGame];
+    self.settingItem = [@{ @"FromValue" : @"0",
+                           @"ToValue" : @"5",
+                           @"Order" : @"Ascending" } mutableCopy];
 
-    self.number = [self nextNumber];
-
-    self.numberVC = [[AIZNumberViewController alloc] initWithNumber:self.number];
-    [self switchViewsFromController:nil
-                       toController:self.numberVC];
+    [self loadGame];
 }
 
 - (void)addTapGR
@@ -91,98 +81,52 @@
         // handle error
     }
     return [objects lastObject];
-
-//    if (self.device)
-//    {
-//        self.nameTextField.text    = [self.device valueForKey:@"name"];
-//        self.versionTextField.text = [self.device valueForKey:@"version"];
-//        self.companyTextField.text = [self.device valueForKey:@"company"];
-//    }
 }
 
-- (void)initGame
+- (void)loadGame
 {
-    NSUInteger from = [[AIZSampleNumbersStore sharedStore] indexByValue:@"0"];
-    NSUInteger to = [[AIZSampleNumbersStore sharedStore] indexByValue:@"5"];
+    if (self.numberVC)
+    {
+        [self.numberVC willMoveToParentViewController:nil];
+        [self.numberVC.view removeFromSuperview];
+        [self.numberVC removeFromParentViewController];
+    }
+    self.numberVC = nil;
+    if (self.wordVC)
+    {
+        [self.wordVC willMoveToParentViewController:nil];
+        [self.wordVC.view removeFromSuperview];
+        [self.wordVC removeFromParentViewController];
+    }
+    self.wordVC   = nil;
+
+    NSUInteger from = [[AIZSampleNumbersStore sharedStore] indexByValue:self.settingItem[@"FromValue"]];
+    NSUInteger to = [[AIZSampleNumbersStore sharedStore] indexByValue:self.settingItem[@"ToValue"]];
     [[AIZGameStore sharedStore] updateSettingsFromValue:from
                                                 toValue:to
-                                              withOrder:@"Ascending"];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    
-//    [[AIZGameStore sharedStore]
-//     getItemsFrom:[defaults stringForKey:AIZFromValue]
-//     to:[defaults stringForKey:AIZToValue]
-//     withType:[defaults integerForKey:AIZGettingType]];
-//
-//    NSLog(@"defaults = %@", [defaults dictionaryRepresentation]);
+                                              withOrder:self.settingItem[@"Order"]];
+    self.number = [self nextNumber];
+
+    self.numberVC = [[AIZNumberViewController alloc] initWithNumber:self.number];
+    [self switchViewsFromController:nil
+                       toController:self.numberVC];
 }
 
-- (void)setGameOptions
+- (void)saveSettings:(AIZSettingsViewController *)sender
+{
+    [self loadGame];
+}
+
+- (void)changeGameSettings
 {
     AIZSettingsViewController *settingsVC = [[AIZSettingsViewController alloc] init];
+    settingsVC.settingsItem = self.settingItem;
+    settingsVC.delegate = self;
 
     UINavigationController *nc = [[UINavigationController alloc]
                                   initWithRootViewController:settingsVC];
 
     [self presentViewController:nc animated:YES completion:nil];
-}
-
-- (void)switchViews
-{
-    [UIView beginAnimations:@"View Flip" context:nil];
-    [UIView setAnimationDuration:0.4];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-
-#warning "Label jumps when view rotates"
-    if (self.numberVC.view.superview)
-    {
-        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight
-                               forView:self.view
-                                 cache:NO];
-
-        self.wordVC = [[AIZWordViewController alloc]
-                       initWithNumber:self.number];
-
-        [self switchViewsFromController:self.numberVC
-                           toController:self.wordVC];
-
-        self.numberVC = nil;
-    }
-    else
-    {
-        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft
-                               forView:self.view
-                                 cache:NO];
-
-        self.number = [self nextNumber];
-        self.numberVC = [[AIZNumberViewController alloc]
-                         initWithNumber:self.number];
-
-        [self switchViewsFromController:self.wordVC
-                           toController:self.numberVC];
-
-        self.wordVC = nil;
-    }
-
-    [UIView commitAnimations];
-}
-
-- (void)switchViewsFromController:(UIViewController *)fromVC
-                     toController:(UIViewController *)toVC
-{
-    if (fromVC)
-    {
-        [fromVC willMoveToParentViewController:nil];
-        [fromVC.view removeFromSuperview];
-        [fromVC removeFromParentViewController];
-    }
-
-    if (toVC)
-    {
-        [self addChildViewController:toVC];
-        [self.view insertSubview:toVC.view atIndex:0];
-        [toVC didMoveToParentViewController:self];
-    }
 }
 
 - (NSManagedObjectContext *)managedObjectContext
