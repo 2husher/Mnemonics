@@ -7,6 +7,7 @@
 //
 
 #import "AIZNumber2WordViewController+SwitchViews.h"
+#import "AIZGameStore.h"
 
 @implementation AIZNumber2WordViewController (SwitchViews)
 
@@ -37,7 +38,8 @@
                                forView:self.view
                                  cache:NO];
 
-        self.number = [self nextNumber];
+        self.number = [[AIZGameStore sharedStore] nextObject];
+
         self.numberVC = [[AIZNumberViewController alloc]
                          initWithNumber:self.number];
 
