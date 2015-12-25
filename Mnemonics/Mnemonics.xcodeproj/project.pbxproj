@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1712C03E1C29E3E6005C2DCA /* AIZAllGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */; };
+		176CD7BD1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 176CD7BC1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.m */; };
+		176CD7C01C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 176CD7BF1C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.m */; };
 		178005E31C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 178005E21C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.m */; };
 		178005E61C2AFFBF00E38C5A /* AIZAllGamesViewController+UIConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 178005E51C2AFFBF00E38C5A /* AIZAllGamesViewController+UIConstraints.m */; };
 		178005EC1C2B073300E38C5A /* AIZNumber2WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178005EB1C2B073300E38C5A /* AIZNumber2WordViewController.m */; };
@@ -60,6 +62,10 @@
 /* Begin PBXFileReference section */
 		1712C03C1C29E3E6005C2DCA /* AIZAllGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZAllGamesViewController.h; path = Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController.h; sourceTree = "<group>"; };
 		1712C03D1C29E3E6005C2DCA /* AIZAllGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZAllGamesViewController.m; path = Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		176CD7BB1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZSettingsViewController+UIControls.h"; path = "Controllers/GamesControllers/SettingsController/AIZSettingsViewController+UIControls.h"; sourceTree = "<group>"; };
+		176CD7BC1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZSettingsViewController+UIControls.m"; path = "Controllers/GamesControllers/SettingsController/AIZSettingsViewController+UIControls.m"; sourceTree = "<group>"; };
+		176CD7BE1C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZSettingsViewController+UIConstraints.h"; path = "Controllers/GamesControllers/SettingsController/AIZSettingsViewController+UIConstraints.h"; sourceTree = "<group>"; };
+		176CD7BF1C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZSettingsViewController+UIConstraints.m"; path = "Controllers/GamesControllers/SettingsController/AIZSettingsViewController+UIConstraints.m"; sourceTree = "<group>"; };
 		178005E11C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZAllGamesViewController+UIControls.h"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIControls.h"; sourceTree = "<group>"; };
 		178005E21C2AFEB200E38C5A /* AIZAllGamesViewController+UIControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AIZAllGamesViewController+UIControls.m"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIControls.m"; sourceTree = "<group>"; };
 		178005E41C2AFFBF00E38C5A /* AIZAllGamesViewController+UIConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIZAllGamesViewController+UIConstraints.h"; path = "Controllers/GamesControllers/AllGamesController/AIZAllGamesViewController+UIConstraints.h"; sourceTree = "<group>"; };
@@ -126,8 +132,8 @@
 		17C66E121C1B319800625005 /* AIZNumbersMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZNumbersMasterViewController.m; path = Controllers/NumbersControllers/NumbersMasterController/AIZNumbersMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17CC22841C2C335F00B29CB1 /* AIZGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZGameStore.h; path = Models/AIZGameStore.h; sourceTree = "<group>"; };
 		17CC22851C2C335F00B29CB1 /* AIZGameStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIZGameStore.m; path = Models/AIZGameStore.m; sourceTree = "<group>"; };
-		17CC22871C2C3FC400B29CB1 /* AIZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZSettingsViewController.h; path = Controllers/GamesControllers/Number2WordGameController/AIZSettingsViewController.h; sourceTree = "<group>"; };
-		17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZSettingsViewController.m; path = Controllers/GamesControllers/Number2WordGameController/AIZSettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		17CC22871C2C3FC400B29CB1 /* AIZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZSettingsViewController.h; path = Controllers/GamesControllers/SettingsController/AIZSettingsViewController.h; sourceTree = "<group>"; };
+		17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AIZSettingsViewController.m; path = Controllers/GamesControllers/SettingsController/AIZSettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17CC228A1C2C991400B29CB1 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Number.h; path = Models/Number.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		17CC228B1C2C991400B29CB1 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = Number.m; path = Models/Number.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		17E466F81C24A957006412AC /* AIZConvertorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIZConvertorsViewController.h; path = Controllers/ConvertorsControllers/AIZConvertorsViewController.h; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 		1712C03B1C29E353005C2DCA /* GamesControllers */ = {
 			isa = PBXGroup;
 			children = (
+				176CD7BA1C2D7B7D007C7ACD /* SettingsController */,
 				178005F41C2B0AED00E38C5A /* WordController */,
 				178005F31C2B0AD100E38C5A /* NumberController */,
 				178005E71C2B066400E38C5A /* AllGamesController */,
@@ -163,6 +170,19 @@
 				178005E91C2B06B600E38C5A /* Word2NumberGameController */,
 			);
 			name = GamesControllers;
+			sourceTree = "<group>";
+		};
+		176CD7BA1C2D7B7D007C7ACD /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				17CC22871C2C3FC400B29CB1 /* AIZSettingsViewController.h */,
+				17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */,
+				176CD7BB1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.h */,
+				176CD7BC1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.m */,
+				176CD7BE1C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.h */,
+				176CD7BF1C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.m */,
+			);
+			name = SettingsController;
 			sourceTree = "<group>";
 		};
 		178005E71C2B066400E38C5A /* AllGamesController */ = {
@@ -187,8 +207,6 @@
 				178005EE1C2B079700E38C5A /* AIZNumber2WordViewController+UIControls.m */,
 				178005F01C2B07F800E38C5A /* AIZNumber2WordViewController+UIConstraints.h */,
 				178005F11C2B07F800E38C5A /* AIZNumber2WordViewController+UIConstraints.m */,
-				17CC22871C2C3FC400B29CB1 /* AIZSettingsViewController.h */,
-				17CC22881C2C3FC400B29CB1 /* AIZSettingsViewController.m */,
 			);
 			name = Number2WordGameController;
 			sourceTree = "<group>";
@@ -515,6 +533,7 @@
 				178006001C2B0C5B00E38C5A /* AIZWordViewController.m in Sources */,
 				17CC228C1C2C991400B29CB1 /* Number.m in Sources */,
 				17CC22891C2C3FC400B29CB1 /* AIZSettingsViewController.m in Sources */,
+				176CD7BD1C2D7BC5007C7ACD /* AIZSettingsViewController+UIControls.m in Sources */,
 				178B098B1C2705E40037A9F0 /* AIZNumberDetailsViewController+UIConstraints.m in Sources */,
 				178005EF1C2B079700E38C5A /* AIZNumber2WordViewController+UIControls.m in Sources */,
 				178005F71C2B0B0900E38C5A /* AIZNumberViewController.m in Sources */,
@@ -540,6 +559,7 @@
 				178005FD1C2B0BE900E38C5A /* AIZNumberViewController+UIConstraints.m in Sources */,
 				178005FA1C2B0B9000E38C5A /* AIZNumberViewController+UIControls.m in Sources */,
 				1712C03E1C29E3E6005C2DCA /* AIZAllGamesViewController.m in Sources */,
+				176CD7C01C2D7BDB007C7ACD /* AIZSettingsViewController+UIConstraints.m in Sources */,
 				178006031C2B0C9700E38C5A /* AIZWordViewController+UIControls.m in Sources */,
 				178B098E1C27067C0037A9F0 /* AIZNumbersMasterViewController+TableView.m in Sources */,
 				17CC22861C2C335F00B29CB1 /* AIZGameStore.m in Sources */,
