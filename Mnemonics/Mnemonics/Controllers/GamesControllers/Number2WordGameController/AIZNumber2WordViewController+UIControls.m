@@ -16,7 +16,7 @@
                             initWithTitle:@"Options"
                             style:UIBarButtonItemStylePlain
                             target:self
-                            action:@selector(setGameOptions)];
+                            action:@selector(changeGameSettings)];
     self.navigationItem.rightBarButtonItem = bbi;
 }
 
