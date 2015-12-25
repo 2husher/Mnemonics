@@ -13,5 +13,6 @@
 - (void)addSegmentedControlConstraints;
 - (void)addFromValueLabelAndTextFieldConstraints;
 - (void)addToValueLabelAndTextFieldConstraints;
+- (void)addCurrentSettingsTextViewConstraints;
 
 @end

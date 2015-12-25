@@ -116,4 +116,27 @@
     [self.view addConstraints:@[horizontalOutputLabelConstraints]];
 }
 
+- (void)addCurrentSettingsTextViewConstraints
+{
+    self.currentSettingTextView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    NSDictionary *nameMap = @{ @"textField" : self.toValueTextField,
+                               @"textView" : self.currentSettingTextView,
+                               @"bottomGuide" :self.bottomLayoutGuide };
+
+    NSArray *verticalConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat: @"V:[textField]-20-[textView]-20-[bottomGuide]"
+                                            options: 0
+                                            metrics: nil
+                                              views: nameMap];
+    [self.view addConstraints:verticalConstraints];
+
+    NSArray *horizontalConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat: @"H:|-[textView]-|"
+                                            options: 0
+                                            metrics: nil
+                                              views: nameMap];
+    [self.view addConstraints:horizontalConstraints];
+}
+
 @end

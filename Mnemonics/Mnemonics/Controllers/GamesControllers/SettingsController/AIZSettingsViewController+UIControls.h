@@ -14,5 +14,6 @@
 - (void)addSegmentedControl;
 - (void)addFromValueLabelAndTextField;
 - (void)addToValueLabelAndTextField;
+- (void)addCurrentSettingsTextView;
 
 @end

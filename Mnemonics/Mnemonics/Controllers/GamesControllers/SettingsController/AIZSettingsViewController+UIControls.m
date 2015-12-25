@@ -71,4 +71,15 @@
     [self.view addSubview:self.toValueTextField];
 }
 
+- (void) addCurrentSettingsTextView
+{
+    self.currentSettingTextView = [[UITextView alloc] initWithFrame:CGRectZero];
+    self.currentSettingTextView.editable = NO;
+    self.currentSettingTextView.font = [UIFont systemFontOfSize:20.0f];
+    self.currentSettingTextView.text = @"";
+
+    [self.view addSubview:self.currentSettingTextView];
+}
+
+
 @end
