@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSString * section;
 @property (nonatomic, retain) NSString * value;
 @property (nonatomic, retain) NSString * word;
-@property (nonatomic, retain) NSNumber * index;
+@property (nonatomic, retain) NSNumber * ordinal;
 
 @end

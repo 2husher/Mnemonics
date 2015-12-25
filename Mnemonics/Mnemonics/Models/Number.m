@@ -16,6 +16,6 @@
 @dynamic section;
 @dynamic value;
 @dynamic word;
-@dynamic index;
+@dynamic ordinal;
 
 @end
