@@ -11,7 +11,7 @@
 #import "AIZNumber2WordViewController+UIConstraints.h"
 #import "AIZNumber2WordViewController+SwitchViews.h"
 #import "AIZGameStore.h"
-#import "AIZSampleNumbersStore.h"
+//#import "AIZSampleNumbersStore.h"
 
 @interface AIZNumber2WordViewController ()
 
@@ -58,31 +58,6 @@
     [self.view addGestureRecognizer:self.tapGR];
 }
 
-- (NSManagedObject *)nextNumber
-{
-    NSNumber *numberIndex = [[AIZGameStore sharedStore] nextItem];
-    NSManagedObjectContext *context = [self managedObjectContext];
-
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entityDescr =[NSEntityDescription
-                                       entityForName:@"Number"
-                                       inManagedObjectContext:context];
-    request.entity = entityDescr;
-
-    NSPredicate *pred = [NSPredicate
-                         predicateWithFormat:@"(index = %@)", numberIndex];
-    request.predicate = pred;
-
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-                                              error:&error];
-    if (objects == nil)
-    {
-        // handle error
-    }
-    return [objects lastObject];
-}
-
 - (void)loadGame
 {
     if (self.numberVC)
@@ -90,22 +65,21 @@
         [self.numberVC willMoveToParentViewController:nil];
         [self.numberVC.view removeFromSuperview];
         [self.numberVC removeFromParentViewController];
+        self.numberVC = nil;
     }
-    self.numberVC = nil;
+
     if (self.wordVC)
     {
         [self.wordVC willMoveToParentViewController:nil];
         [self.wordVC.view removeFromSuperview];
         [self.wordVC removeFromParentViewController];
+        self.wordVC = nil;
     }
-    self.wordVC   = nil;
 
-    NSUInteger from = [[AIZSampleNumbersStore sharedStore] indexByValue:self.settingItem[@"FromValue"]];
-    NSUInteger to = [[AIZSampleNumbersStore sharedStore] indexByValue:self.settingItem[@"ToValue"]];
-    [[AIZGameStore sharedStore] updateSettingsFromValue:from
-                                                toValue:to
+    [[AIZGameStore sharedStore] updateSettingsFromValue:self.settingItem[@"FromValue"]
+                                                toValue:self.settingItem[@"ToValue"]
                                               withOrder:self.settingItem[@"Order"]];
-    self.number = [self nextNumber];
+    self.number = [[AIZGameStore sharedStore] nextObject];
 
     self.numberVC = [[AIZNumberViewController alloc] initWithNumber:self.number];
     [self switchViewsFromController:nil
@@ -127,17 +101,6 @@
                                   initWithRootViewController:settingsVC];
 
     [self presentViewController:nc animated:YES completion:nil];
-}
-
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)])
-    {
-        context = [delegate managedObjectContext];
-    }
-    return context;
 }
 
 @end
