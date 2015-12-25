@@ -7,6 +7,7 @@
 //
 
 #import "AIZGameStore.h"
+#import "AIZSampleNumbersStore.h"
 
 //NSString * const AIZGettingType = @"GettingType";
 //NSString * const AIZFromValue   = @"FromValue";
@@ -14,13 +15,15 @@
 
 #warning "types for asc, des, rand"
 
+//  @"00", @"01", @"02"
+//  @30,   @31,   @32
+//  0,     1,     2
+
 @interface AIZGameStore ()
 
-@property (nonatomic, strong) NSMutableArray *privateItems;
-@property (nonatomic, strong) NSString *order;
-@property (nonatomic) NSUInteger fromIndex;
-@property (nonatomic) NSUInteger toIndex;
-@property (nonatomic) NSUInteger nextItemIndex;
+@property (nonatomic, copy) NSMutableArray *privateOrdinals;
+@property (nonatomic, copy) NSMutableDictionary *config;
+@property (nonatomic) NSUInteger nextOrdinalIndex;
 
 @end
 
@@ -42,7 +45,10 @@
     self = [super init];
     if (self)
     {
-        self.privateItems = [[NSMutableArray alloc] init];
+        self.privateOrdinals = [[NSMutableArray alloc] init];
+        self.config = [@{@"fromOrdinal" : @0,
+                         @"toOrdinal" : @1,
+                         @"order" : @"" } mutableCopy];
 
 #warning "always erase settings with defaults?"
     }
@@ -57,25 +63,27 @@
     return nil;
 }
 
-- (NSNumber *)nextItem
+- (NSNumber *)nextOrdinal
 {
-    if (self.nextItemIndex >= [self.privateItems count])
+    if (self.nextOrdinalIndex >= [self.privateOrdinals count])
     {
 #warning "check if game loading"
         [self loadGame];
     }
-    NSNumber *nextItem = self.privateItems[self.nextItemIndex];
-    self.nextItemIndex++;
-    return nextItem;
+    NSNumber *nextOrdinal = self.privateOrdinals[self.nextOrdinalIndex];
+    self.nextOrdinalIndex++;
+    return nextOrdinal;
 }
 
-- (void)updateSettingsFromValue:(NSUInteger)from
-                        toValue:(NSUInteger)to
-                       withOrder:(NSString *)order
+- (void)updateSettingsFromValue:(NSString *)fromValue
+                        toValue:(NSString *)toValue
+                      withOrder:(NSString *)order
 {
-    self.fromIndex = from;
-    self.toIndex = to;
-    self.order = order;
+    self.config[@"fromOrdinal"] = [[AIZSampleNumbersStore sharedStore]
+                                   ordinalByValue:fromValue];
+    self.config[@"toOrdinal"] = [[AIZSampleNumbersStore sharedStore]
+                                 ordinalByValue:toValue];
+    self.config[@"order"] = order;//[NSString stringWithString:order];
     [self loadGame];
 }
 
@@ -83,57 +91,76 @@
 {
     NSLog(@"Loading game...");
 
-    [self.privateItems removeAllObjects];
-    self.nextItemIndex = 1;
+    [self.privateOrdinals removeAllObjects];
+    self.nextOrdinalIndex = 0;
+    NSUInteger from = [self.config[@"fromOrdinal"] integerValue];
+    NSUInteger to   = [self.config[@"toOrdinal"] integerValue];
 
-    NSUInteger from = self.fromIndex;
-    NSUInteger to   = self.toIndex;
 #warning  "add validation to form"
     if (from <= to)
     {
         for (NSUInteger i = from; i <= to; i++)
         {
-            [self.privateItems addObject:[NSNumber numberWithInteger:i]];
+            NSNumber *ordinal = [NSNumber numberWithInteger:i];
+            [self.privateOrdinals addObject:ordinal];
         }
     }
     else if (from > to)
     {
         for (NSUInteger i = from; i <= to; i--)
         {
-            [self.privateItems addObject:[NSNumber numberWithInteger:i]];
+            NSNumber *ordinal = [NSNumber numberWithInteger:i];
+            [self.privateOrdinals addObject:ordinal];
         }
     }
-    if ([self.order isEqualToString:@"Random"])
+    if ([self.config[@"order"] isEqualToString:@"Random"])
     {
-        NSUInteger count = [self.privateItems count];
+        NSUInteger count = [self.privateOrdinals count];
         for (NSUInteger i = 0; i < count - 1; ++i) {
             NSInteger remainingCount = count - i;
             NSInteger exchangeIndex = i + arc4random_uniform((u_int32_t )remainingCount);
-            [self.privateItems exchangeObjectAtIndex:i
-                                   withObjectAtIndex:exchangeIndex];
+            [self.privateOrdinals exchangeObjectAtIndex:i
+                                      withObjectAtIndex:exchangeIndex];
         }
     }
 
-    NSLog(@"array %@", self.privateItems);
+    NSLog(@"array %@", self.privateOrdinals);
+}
+
+- (NSManagedObject *)nextObject
+{
+    NSNumber *ordinal = [[AIZGameStore sharedStore] nextOrdinal];
+    NSManagedObjectContext *context = [self managedObjectContext];
+
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescr =[NSEntityDescription
+                                       entityForName:@"Number"
+                                       inManagedObjectContext:context];
+    request.entity = entityDescr;
+
+    NSPredicate *pred = [NSPredicate
+                         predicateWithFormat:@"(ordinal = %@)", ordinal];
+    request.predicate = pred;
+
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request
+                                              error:&error];
+    if (objects == nil)
+    {
+        // handle error
+    }
+    return [objects lastObject];
+}
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)])
+    {
+        context = [delegate managedObjectContext];
+    }
+    return context;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

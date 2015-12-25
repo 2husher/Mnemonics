@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AIZGameStore : NSObject
 
 + (instancetype)sharedStore;
 
-- (NSNumber *)nextItem;
-- (void)updateSettingsFromValue:(NSUInteger)from
-                        toValue:(NSUInteger)to
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (NSManagedObject *)nextObject;
+- (void)updateSettingsFromValue:(NSString *)fromValue
+                        toValue:(NSString *)toValue
                       withOrder:(NSString *)order;
 
 @end
