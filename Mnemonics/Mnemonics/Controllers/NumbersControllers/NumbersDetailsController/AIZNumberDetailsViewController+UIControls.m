@@ -13,21 +13,18 @@
 - (void)addNumberLettersWordLabels
 {
     self.numberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.numberLabel.text = @"69";
     self.numberLabel.textAlignment = NSTextAlignmentCenter;
     self.numberLabel.font = [UIFont systemFontOfSize:100.0f];
     [self.numberLabel sizeToFit];
     [self.view addSubview:self.numberLabel];
 
     self.lettersLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.lettersLabel.text = @"ШР";
     self.lettersLabel.textAlignment = NSTextAlignmentCenter;
     self.lettersLabel.font = [UIFont systemFontOfSize:30.0f];
     [self.lettersLabel sizeToFit];
     [self.view addSubview:self.lettersLabel];
 
     self.wordLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.wordLabel.text = @"шар";
     self.wordLabel.textAlignment = NSTextAlignmentCenter;
     self.wordLabel.font = [UIFont systemFontOfSize:50.0f];
     [self.wordLabel sizeToFit];
