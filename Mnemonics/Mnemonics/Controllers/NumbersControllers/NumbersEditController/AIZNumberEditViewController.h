@@ -10,7 +10,7 @@
 
 @interface AIZNumberEditViewController : UIViewController
 
-@property (strong, nonatomic) id editItem;
+@property (strong, nonatomic) id editedItem;
 
 @property (strong, nonatomic) UILabel *numberLabel;
 @property (strong, nonatomic) UILabel *lettersLabel;

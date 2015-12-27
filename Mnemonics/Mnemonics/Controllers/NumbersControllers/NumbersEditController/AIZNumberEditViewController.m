@@ -11,41 +11,18 @@
 #import "AIZNumberEditViewController+UIConstraints.h"
 #import "AIZDigitsStore.h"
 
-@interface AIZNumberEditViewController ()
-
-@end
-
 @implementation AIZNumberEditViewController
 
-- (void)setEditItem:(id)newEditItem
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
 {
-    if (_editItem != newEditItem)
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
+    if (self)
     {
-        _editItem = newEditItem;
+        self.title = NSLocalizedString(@"Edit", @"Edit");
     }
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.editItem)
-    {
-        self.numberLabel.text =
-        [[self.editItem valueForKey:@"value"] description];
-
-        [self.lettersSegmentedControl removeAllSegments];
-        NSArray *letters = [[AIZDigitsStore sharedStore]
-                            getLettersForDigits:self.numberLabel.text];
-        NSUInteger len = [letters count];
-        for (NSUInteger i = 0; i < len; i++)
-        {
-            NSString *title = [letters[i] componentsJoinedByString:@""];
-            [self.lettersSegmentedControl insertSegmentWithTitle:title
-                                                         atIndex:i
-                                                        animated:NO];
-        }
-    }
+    return self;
 }
 
 - (void)viewDidLoad
@@ -60,8 +37,29 @@
     [self addLetterLabelSegmentedControl];
     [self addLetterLabelSegmentedControlConstraints];
 
-    // Update the view.
     [self configureView];
+}
+
+- (void)configureView
+{
+    if (self.editedItem)
+    {
+        self.numberLabel.text = [[self.editedItem valueForKey:@"value"]
+                                 description];
+        
+        [self.lettersSegmentedControl removeAllSegments];
+
+        NSArray *letters = [[AIZDigitsStore sharedStore]
+                            getLettersForDigits:self.numberLabel.text];
+        NSUInteger len = [letters count];
+        for (NSUInteger i = 0; i < len; i++)
+        {
+            NSString *title = [letters[i] componentsJoinedByString:@""];
+            [self.lettersSegmentedControl insertSegmentWithTitle:title
+                                                         atIndex:i
+                                                        animated:NO];
+        }
+    }
 }
 
 - (void)cancel
