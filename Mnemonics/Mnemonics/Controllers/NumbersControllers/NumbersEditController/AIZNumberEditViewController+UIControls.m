@@ -12,8 +12,6 @@
 
 - (void)addNavItems
 {
-    self.navigationItem.title = @"Edit";
-
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc]
                                   initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                   target:self
@@ -30,7 +28,6 @@
 - (void)addNumberLabel
 {
     self.numberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.numberLabel.text = @"69";
     self.numberLabel.textAlignment = NSTextAlignmentCenter;
     self.numberLabel.font = [UIFont systemFontOfSize:100.0f];
     [self.numberLabel sizeToFit];
@@ -47,7 +44,7 @@
     [self.view addSubview:self.lettersLabel];
     
     self.lettersSegmentedControl = [[UISegmentedControl alloc]
-                                    initWithItems:@[@"ШР", @"ШЦ", @"ЛР", @"ЛЦ"]];
+                                    init];
     [self.lettersSegmentedControl addTarget:self
                                      action:@selector(toggleControls:)
                            forControlEvents:UIControlEventValueChanged];
