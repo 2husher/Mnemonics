@@ -91,4 +91,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
                                          animated:YES];
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return self.fetchedResultsController.sectionIndexTitles;
+}
+
+- (NSString *)controller:(NSFetchedResultsController *)controller
+sectionIndexTitleForSectionName:(NSString *)sectionName
+{
+    return sectionName;
+}
+
 @end

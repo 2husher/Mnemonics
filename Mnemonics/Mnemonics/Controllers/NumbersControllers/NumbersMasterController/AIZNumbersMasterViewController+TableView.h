@@ -8,7 +8,7 @@
 
 #import "AIZNumbersMasterViewController.h"
 
-@interface AIZNumbersMasterViewController (TableView)<UITableViewDataSource, UITableViewDelegate>
+@interface AIZNumbersMasterViewController (TableView)<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 - (void) addMyTableView;
 
