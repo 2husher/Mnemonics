@@ -14,7 +14,6 @@
 @interface AIZNumbersMasterViewController : UIViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (strong, nonatomic) AIZNumberDetailsViewController *detailViewController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
