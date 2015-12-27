@@ -49,35 +49,37 @@
 
 - (NSArray *)getLettersForDigits:(NSString *)digitsStr
 {
+#warning "Where is to implement validation for digits in str, not letters"
     NSMutableArray *letters = [[NSMutableArray alloc] init];
     NSArray *firstLetters  = self.privateDigits[0];
     NSArray *secondLetters = self.privateDigits[1];
-    if (digitsStr.length == 1 || digitsStr.length == 2)
+    if (digitsStr.length == 1)
     {
-#warning "Not suitable for 01 ... 09"
+        NSInteger onlyDigit  = [digitsStr integerValue];
 
-        NSInteger number = [digitsStr integerValue];
-        if (number < 10)
+        [letters addObject:@[firstLetters[onlyDigit]]];
+        [letters addObject:@[secondLetters[onlyDigit]]];
+    }
+    else if (digitsStr.length == 2)
+    {
+        NSString *firstChar  = [digitsStr
+                                substringWithRange:NSMakeRange(0, 1)];
+        NSString *secondChar = [digitsStr
+                                substringWithRange:NSMakeRange(1, 1)];
+
+        NSInteger firstDigit  = [firstChar integerValue];
+        NSInteger secondDigit = [secondChar integerValue];
+        NSArray *firstPair = @[firstLetters[firstDigit],
+                               secondLetters[firstDigit]];
+        NSArray *secondPair = @[firstLetters[secondDigit],
+                               secondLetters[secondDigit]];
+        for (int i = 0; i < 2; i++)
         {
-            [letters addObject:@[firstLetters[number]]];
-            [letters addObject:@[secondLetters[number]]];
-        }
-        else if (number > 9 && number < 100)
-        {
-            NSInteger firstDigit  = number / 10;
-            NSInteger secondDigit = number % 10;
-            NSArray *firstPair = @[firstLetters[firstDigit],
-                                   secondLetters[firstDigit]];
-            NSArray *secondPair = @[firstLetters[secondDigit],
-                                   secondLetters[secondDigit]];
-            for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
             {
-                for (int j = 0; j < 2; j++)
-                {
-                    NSArray *lettersPair = @[firstPair[i],
-                                             secondPair[j]];
-                    [letters addObject:lettersPair];
-                }
+                NSArray *lettersPair = @[firstPair[i],
+                                         secondPair[j]];
+                [letters addObject:lettersPair];
             }
         }
     }
