@@ -17,42 +17,6 @@
 
 @implementation AIZNumberDetailsViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem)
-    {
-        _detailItem = newDetailItem;
-
-        // Update the view.
-        [self configureView];
-    }
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem)
-    {
-        self.numberLabel.text =
-            [[self.detailItem valueForKey:@"value"] description];
-    }
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    [self addNumberLettersWordLabels];
-    [self addNumberLettersWordLabelsConstraints];
-
-    [self addNavItem];
-
- //   [self configureView];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,6 +29,32 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [self addNumberLettersWordLabels];
+    [self addNumberLettersWordLabelsConstraints];
+
+    [self addNavItem];
+
+    [self configureView];
+}
+
+- (void)configureView
+{
+    if (self.detailItem && self.numberLabel &&
+        self.lettersLabel && self.wordLabel)
+    {
+        self.numberLabel.text = [[self.detailItem valueForKey:@"value"]
+                                 description];
+        self.lettersLabel.text = [[self.detailItem valueForKey:@"letters"]
+                                  description];
+        self.wordLabel.text = [[self.detailItem valueForKey:@"word"]
+                               description];
+    }
+}
+
 - (void)editNumber
 {
     AIZNumberEditViewController *numberEditVC = [[AIZNumberEditViewController alloc] init];
@@ -72,7 +62,7 @@
     UINavigationController *nc = [[UINavigationController alloc]
                                   initWithRootViewController:numberEditVC];
 
-    numberEditVC.editItem = self.detailItem;
+    numberEditVC.editedItem = self.detailItem;
 
     [self presentViewController:nc animated:YES completion:nil];
 }
