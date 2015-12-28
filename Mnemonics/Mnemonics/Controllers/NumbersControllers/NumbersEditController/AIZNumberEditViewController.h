@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AIZNumberEditViewController : UIViewController
+@protocol AIZNumberEditViewDelegate <NSObject>
+
+- (void)updateView;
+
+@end
+
+@interface AIZNumberEditViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) id editedItem;
+@property (strong, nonatomic) id<AIZNumberEditViewDelegate>delegate;
 
 @property (strong, nonatomic) UILabel *numberLabel;
 @property (strong, nonatomic) UILabel *lettersLabel;
 @property (nonatomic, strong) UISegmentedControl *lettersSegmentedControl;
+@property (strong, nonatomic) UILabel *wordLabel;
+@property (strong, nonatomic) UITextField *wordTextField;
 
 - (void)toggleControls:(UISegmentedControl *)sender;
 - (void)cancel;
