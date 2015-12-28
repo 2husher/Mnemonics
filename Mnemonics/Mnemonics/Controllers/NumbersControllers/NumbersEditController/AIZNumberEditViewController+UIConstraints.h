@@ -12,5 +12,6 @@
 
 - (void)addNumberLabelConstraints;
 - (void)addLetterLabelSegmentedControlConstraints;
+- (void)addWordLabelAndTextFieldConstraints;
 
 @end

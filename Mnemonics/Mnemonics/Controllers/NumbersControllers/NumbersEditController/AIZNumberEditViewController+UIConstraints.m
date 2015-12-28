@@ -64,4 +64,35 @@
     [self.view addConstraints:verticalConstraints];
 }
 
+- (void)addWordLabelAndTextFieldConstraints
+{
+    self.wordLabel.translatesAutoresizingMaskIntoConstraints     = NO;
+    self.wordTextField.translatesAutoresizingMaskIntoConstraints = NO;
+
+    NSDictionary *nameMap = @{ @"segmentedControl" : self.lettersSegmentedControl,
+                               @"wordLabel" : self.wordLabel,
+                               @"wordTextField" : self.wordTextField };
+
+    NSArray *verticalConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat:@"V:[segmentedControl]-50-[wordLabel]-[wordTextField]"
+                                            options:0
+                                            metrics:nil
+                                              views:nameMap];
+    [self.view addConstraints:verticalConstraints];
+
+    NSArray *horizontalWordLabelConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[wordLabel]-|"
+                                            options:0
+                                            metrics:nil
+                                              views:nameMap];
+    [self.view addConstraints:horizontalWordLabelConstraints];
+
+    NSArray *horizontalWordTextFieldConstraints =
+    [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[wordTextField]-|"
+                                            options:0
+                                            metrics:nil
+                                              views:nameMap];
+    [self.view addConstraints:horizontalWordTextFieldConstraints];
+}
+
 @end

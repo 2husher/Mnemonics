@@ -13,5 +13,6 @@
 - (void)addNavItems;
 - (void)addNumberLabel;
 - (void)addLetterLabelSegmentedControl;
+- (void)addWordLabelAndTextField;
 
 @end

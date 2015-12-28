@@ -52,4 +52,21 @@
     [self.view addSubview:self.lettersSegmentedControl];
 }
 
+- (void)addWordLabelAndTextField
+{
+    self.wordLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.wordLabel.text = @"Введите слово для запоминания числа:";
+    self.wordLabel.textAlignment = NSTextAlignmentCenter;
+    self.wordLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.wordLabel sizeToFit];
+    [self.view addSubview:self.wordLabel];
+
+    self.wordTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    self.wordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    self.wordTextField.returnKeyType = UIReturnKeyDone;
+    self.wordTextField.placeholder = @"Type in a word...";
+    self.wordTextField.delegate = self;
+    [self.view addSubview:self.wordTextField];
+}
+
 @end
