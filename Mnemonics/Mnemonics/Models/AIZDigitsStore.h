@@ -14,5 +14,6 @@
 
 - (NSArray *)getLettersForDigits:(NSString *)digitsStr;
 - (NSArray *)getDigitsForLetters:(NSString *)lettersStr;
+- (BOOL)checkWord:(NSString *)word forLetters:(NSString *)letters;
 
 @end

@@ -123,4 +123,22 @@
     return output;
 }
 
+- (BOOL)checkWord:(NSString *)word forLetters:(NSString *)letters
+{
+    NSMutableSet *set = [NSMutableSet setWithArray:self.privateDigits[0]];
+    [set addObjectsFromArray:self.privateDigits[1]];
+    NSUInteger len = [word length];
+    NSMutableString *outStr = [[NSMutableString alloc] init];
+    for (NSUInteger i = 0; i < len; i++)
+    {
+        NSString *ch = [[word substringWithRange:NSMakeRange(i, 1)]
+                        uppercaseString];
+        if ([set containsObject:ch])
+        {
+            [outStr appendString:ch];
+        }
+    }
+    return [outStr isEqualToString:letters];
+}
+
 @end
