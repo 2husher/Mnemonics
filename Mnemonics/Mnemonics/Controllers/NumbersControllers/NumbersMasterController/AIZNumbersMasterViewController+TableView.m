@@ -60,13 +60,15 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AIZNumberDetailsViewController *detailViewController =
+    self.detailViewController =
         [[AIZNumberDetailsViewController alloc]
          initWithNibName:nil bundle:nil];
+#warning "right?"
     NSManagedObject *object = [self.fetchedResultsController
                                objectAtIndexPath:indexPath];
-    detailViewController.detailItem = object;
-    [self.navigationController pushViewController:detailViewController
+    self.detailViewController.detailItem = object;
+    self.detailViewController.delegate = self;
+    [self.navigationController pushViewController:self.detailViewController
                                          animated:YES];
 }
 

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "AIZNumberDetailsViewController.h"
 
-@class AIZNumberDetailsViewController;
+@interface AIZNumbersMasterViewController : UIViewController <NSFetchedResultsControllerDelegate, AIZNumberDetailsViewDelegate>
 
-@interface AIZNumbersMasterViewController : UIViewController <NSFetchedResultsControllerDelegate>
-
+@property (nonatomic, strong) AIZNumberDetailsViewController *detailViewController;
 @property (nonatomic, strong) UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

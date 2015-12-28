@@ -9,14 +9,11 @@
 #import "AIZNumbersMasterViewController.h"
 #import "AIZNumbersMasterViewController+TableView.h"
 #import "AIZSampleNumbersStore.h"
+#import "AIZAppDelegate.h"
 
-@interface AIZNumbersMasterViewController () 
-
-
-//@property (nonatomic, strong) NSArray *numbers;
+@interface AIZNumbersMasterViewController ()
 
 @end
-
 
 @implementation AIZNumbersMasterViewController
 
@@ -48,12 +45,13 @@
     NSArray *numbers = [self.fetchedResultsController fetchedObjects];
     if ([numbers count] == 0)
     {
-        [self reloadSampleNumbers];
+        [self loadSampleNumbers];
     }
 }
 
-- (void)reloadSampleNumbers
+- (void)loadSampleNumbers
 {
+#warning "move all core data to appdelegate"
     NSArray *sampleNumbers = [[AIZSampleNumbersStore sharedStore] allNumbers];
 
     NSManagedObjectContext *context =
@@ -84,6 +82,14 @@
         self.fetchedResultsController = nil;
     }
 }
+
+- (void)saveNumber
+{
+    AIZAppDelegate *delegate =
+        (AIZAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [delegate saveContext];
+}
+
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
