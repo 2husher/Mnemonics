@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor whiteColor];
+
     [self initNumbers];
     [self addMyTableView];
 }

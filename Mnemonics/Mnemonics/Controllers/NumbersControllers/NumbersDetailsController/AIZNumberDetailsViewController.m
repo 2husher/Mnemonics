@@ -33,6 +33,8 @@
 {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor whiteColor];
+
     [self addNumberLettersWordLabels];
     [self addNumberLettersWordLabelsConstraints];
 
@@ -52,6 +54,7 @@
                                   description];
         self.wordLabel.text = [[self.detailItem valueForKey:@"word"]
                                description];
+
     }
 }
 

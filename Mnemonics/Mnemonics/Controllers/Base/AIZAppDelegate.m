@@ -42,7 +42,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                               self.infoNavC];
     self.window.rootViewController = self.tabBarController;
 
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
