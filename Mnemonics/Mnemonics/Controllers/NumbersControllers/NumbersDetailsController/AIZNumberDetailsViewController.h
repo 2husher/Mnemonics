@@ -7,15 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AIZNumberEditViewController.h"
 
-@interface AIZNumberDetailsViewController : UIViewController
+@protocol AIZNumberDetailsViewDelegate <NSObject>
+
+- (void)saveNumber;
+
+@end
+
+@interface AIZNumberDetailsViewController : UIViewController <AIZNumberEditViewDelegate>
 
 @property (strong, nonatomic) id detailItem;
+@property (nonatomic, strong) id<AIZNumberDetailsViewDelegate> delegate;
+@property (nonatomic, strong) AIZNumberEditViewController *editedVC;
 
 @property (strong, nonatomic) UILabel *numberLabel;
 @property (strong, nonatomic) UILabel *lettersLabel;
 @property (strong, nonatomic) UILabel *wordLabel;
 
 - (void)editNumber;
+- (void)configureView;
 
 @end

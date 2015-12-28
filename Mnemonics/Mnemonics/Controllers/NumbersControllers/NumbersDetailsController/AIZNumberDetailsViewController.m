@@ -60,14 +60,21 @@
 
 - (void)editNumber
 {
-    AIZNumberEditViewController *numberEditVC = [[AIZNumberEditViewController alloc] init];
+    self.editedVC = [[AIZNumberEditViewController alloc] init];
 
     UINavigationController *nc = [[UINavigationController alloc]
-                                  initWithRootViewController:numberEditVC];
+                                  initWithRootViewController:self.editedVC];
 
-    numberEditVC.editedItem = self.detailItem;
+    self.editedVC.editedItem = self.detailItem;
+    self.editedVC.delegate = self;
 
     [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)updateView
+{
+    [self configureView];
+    [self.delegate saveNumber];
 }
 
 @end
