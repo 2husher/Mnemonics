@@ -188,6 +188,12 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+        else
+        {
+#ifdef DEBUG
+            NSLog(@"Context saved successfully!");
+#endif
+        }
     }
 }
 
